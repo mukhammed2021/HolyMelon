@@ -35,8 +35,8 @@ export default function Hero() {
 
 function InfiniteScroller() {
    const scrollRef = useRef<HTMLDivElement>(null);
-   const [scrollPosition, setScrollPosition] = useState(0);
-   const [isAnimating, setIsAnimating] = useState(true);
+   const [, setScrollPosition] = useState(0);
+   const [isAnimating] = useState(true);
 
    useEffect(() => {
       const handleScroll = () => {
