@@ -80,6 +80,6 @@ body {
       @apply flex min-h-full flex-col overflow-hidden supports-[overflow:clip]:overflow-clip [&>main]:flex-grow;
    }
    .container {
-      @apply mx-auto max-w-[101.75rem] px-4;
+      @apply mx-auto max-w-[1772px] px-4;
    }
 }
