@@ -76,7 +76,7 @@ export default function AboutUs() {
                      </div>
                   </address>
                </div>
-               <div className="flex w-full grow justify-center rounded-[40px] bg-[#fbfbfb] py-[3.3125rem] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] xl:min-w-[43.75rem]">
+               <div className="flex grow justify-center rounded-[40px] bg-[#fbfbfb] py-[3.3125rem] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] max-xl:w-full xl:min-w-[43.75rem]">
                   <Image
                      src={logo}
                      alt="логотип holy melon"
