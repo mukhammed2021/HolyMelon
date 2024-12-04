@@ -18,7 +18,7 @@ const scrollerTexts = [
 
 export default function Hero() {
    return (
-      <section className="pt-[100px]">
+      <section className="pb-7 pt-[100px] md:pb-10 lg:pb-14">
          <div>
             <Image
                src="/hero/hero-bg.jpg"
