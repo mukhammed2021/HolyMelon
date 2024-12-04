@@ -5,7 +5,9 @@ import { cn } from "@/lib/utils";
 const items = [
    {
       id: crypto.randomUUID(),
-      title: "lorem ipsum",
+      title: "aho restaurant",
+      date: "5 Сентября",
+      link: "/aho",
       linkClassName: "row-span-2",
       imgClassName: "object-cover size-full",
       src: "/recent-events/01.jpeg",
@@ -14,7 +16,9 @@ const items = [
    },
    {
       id: crypto.randomUUID(),
-      title: "lorem ipsum",
+      title: "bla bla bar",
+      date: "5 Сентября",
+      link: "/",
       imgClassName: "aspect-[384/230] object-cover size-full",
       src: "/recent-events/01.jpeg",
       width: 384,
@@ -22,7 +26,9 @@ const items = [
    },
    {
       id: crypto.randomUUID(),
-      title: "lorem ipsum",
+      title: "berezka",
+      date: "5 Сентября",
+      link: "/",
       imgClassName: "aspect-[384/230] object-cover size-full",
       src: "/recent-events/01.jpeg",
       width: 384,
@@ -30,7 +36,9 @@ const items = [
    },
    {
       id: crypto.randomUUID(),
-      title: "lorem ipsum",
+      title: "aho restaurant",
+      date: "5 Сентября",
+      link: "/",
       linkClassName: "row-span-2",
       imgClassName: "object-cover size-full",
       src: "/recent-events/01.jpeg",
@@ -39,7 +47,9 @@ const items = [
    },
    {
       id: crypto.randomUUID(),
-      title: "lorem ipsum",
+      title: "shishka premium",
+      date: "5 Сентября",
+      link: "/",
       linkClassName: "row-span-2",
       imgClassName: "object-cover size-full",
       src: "/recent-events/01.jpeg",
@@ -48,7 +58,9 @@ const items = [
    },
    {
       id: crypto.randomUUID(),
-      title: "lorem ipsum",
+      title: "shishka",
+      date: "5 Сентября",
+      link: "/",
       linkClassName: "row-span-2",
       imgClassName: "object-cover size-full",
       src: "/recent-events/01.jpeg",
@@ -57,7 +69,9 @@ const items = [
    },
    {
       id: crypto.randomUUID(),
-      title: "lorem ipsum",
+      title: "Berezka",
+      date: "5 Сентября",
+      link: "/",
       imgClassName: "aspect-[384/230] object-cover size-full",
       src: "/recent-events/01.jpeg",
       width: 384,
@@ -65,7 +79,9 @@ const items = [
    },
    {
       id: crypto.randomUUID(),
-      title: "lorem ipsum",
+      title: "aho restaurant",
+      date: "5 Сентября",
+      link: "/",
       imgClassName: "aspect-[384/230] object-cover size-full",
       src: "/recent-events/01.jpeg",
       width: 384,
@@ -84,7 +100,7 @@ export default function RecentEvents() {
                {items.map((item) => (
                   <Link
                      key={item.id}
-                     href="/"
+                     href={item.link}
                      className={cn(
                         item.linkClassName,
                         "group relative text-white",
@@ -100,15 +116,15 @@ export default function RecentEvents() {
                      <p className="absolute left-5 top-6 rounded-[1.25rem] bg-[#212020]/[.7] px-[1.5625rem] py-[.375rem] text-base backdrop-blur-[56px] 2xl:left-[2.375rem] 2xl:top-10 2xl:text-xl">
                         Астана
                      </p>
-                     <div className="absolute bottom-6 left-5 2xl:bottom-[2.625rem] 2xl:left-[2.375rem]">
-                        <p className="font-bold uppercase transition-transform group-hover:translate-x-2 xl:text-xl 2xl:text-3xl">
-                           aho restaurant
+                     <div className="absolute bottom-6 left-5 2xl:left-[2.375rem]">
+                        <p className="max-w-[12.8125rem] font-bold uppercase transition-transform group-hover:translate-x-2 xl:text-xl 2xl:text-3xl">
+                           {item.title}
                         </p>
                         <time
                            dateTime="09-05"
                            className="text-base 2xl:text-xl"
                         >
-                           5 Сентября
+                           {item.date}
                         </time>
                      </div>
                   </Link>
