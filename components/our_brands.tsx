@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Типы для данных брендов
 type Brand = {
@@ -38,33 +38,66 @@ const brands: Brand[] = [
 ];
 
 const BrandsBlock: React.FC = () => {
-  const [activeId, setActiveId] = useState<number>(1); // По умолчанию первая карточка активна
+  const [activeId, setActiveId] = useState<number | null>(null); // Активная карточка
+  const [isMobileView, setIsMobileView] = useState<boolean>(false); // Отслеживаем мобильный вид
+
+  // Обновляем `isMobileView` при изменении ширины экрана
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth < 779); // Переключаем состояние для мобильного вида
+    };
+    handleResize(); // Проверка при монтировании
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <section style={{ textAlign: "left", padding: "20px" }}>
-      <h2 style={{fontFamily: "Aeroport", fontSize: "43px", fontWeight: "700", margin: "92px 0 62px"  }}>НАШИ БРЕНДЫ</h2>
+    <section
+      style={{
+        marginInline: "auto",
+        maxWidth: "1636px",
+        textAlign: "left",
+        padding: "20px",
+      }}
+    >
+      <h2
+        style={{
+          fontFamily: "Aeroport",
+          fontSize: "43px",
+          fontWeight: "700",
+          margin: "92px 0 62px",
+        }}
+      >
+        НАШИ БРЕНДЫ
+      </h2>
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: brands
-            .map((brand) => (brand.id === activeId ? "2.5fr" : "1fr"))
-            .join(" "),
-          gap: "44px",
+          gridTemplateColumns: isMobileView
+            ? "1fr" // При разрешении меньше 779px карточки выстраиваются в колонку
+            : brands
+                .map((brand) => (brand.id === activeId ? "2.5fr" : "1fr"))
+                .join(" "), // Для обычного вида меняем ширину колонок
+          gap: "2.31%",
           transition: "grid-template-columns 0.5s ease",
-          marginInline: "8.182%",
+          paddingInline: "4.1%",
         }}
       >
         {brands.map((brand) => (
           <div
             key={brand.id}
-            onClick={() => setActiveId(brand.id)} // Меняем активную карточку по клику
+            onClick={() => setActiveId(brand.id)} // Устанавливаем активный элемент
             style={{
               position: "relative",
               borderRadius: "16px",
               overflow: "hidden",
               cursor: "pointer",
-              minHeight: "870px",
-              maxHeight: "875px"
+              height: isMobileView
+                ? activeId === brand.id
+                  ? "450px" // На мобильных увеличиваем высоту до 250px
+                  : "200px" // На мобильных высота по умолчанию — 100px
+                : "870px", // На десктопах фиксированная высота
+              transition: "height 0.5s ease", // Анимация изменения высоты
             }}
           >
             <img

@@ -34,9 +34,14 @@ const announcements: Announcement[] = [
   },
 ];
 
+// max-width: 1990px;
+//     padding-inline: 4.52%;
+//     text-align: left;
+//     margin: 152px auto;
+
 const AnnouncementsBlock: React.FC = () => {
   return (
-    <section style={{ textAlign: "left", margin: "152px 4.5455%" }}>
+    <section style={{ maxWidth: "1990px" , paddingInline: "4.52%" , textAlign: "left", margin: "152px auto" }}>
       <h2 style={{ fontSize: "24px", marginBottom: "16px" }}>АНОНСЫ</h2>
       <p style={{ fontSize: "16px", marginBottom: "20px" }}>
         Готовимся к захватывающему событию: уже [дата] мы ждем вас на [название
@@ -50,13 +55,14 @@ const AnnouncementsBlock: React.FC = () => {
             style={{
               border: "1px solid #000",
               borderRadius: "8px",
-              padding: "16px",
+              padding: "0.92%",
               display: "flex",
               alignItems: "center",
               gap: "12px",
               transition: "background-color 0.3s, color 0.3s",
               cursor: "pointer",
-              height: "83px"
+              height: "100%",
+              minHeight: "83px"
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#142535";
