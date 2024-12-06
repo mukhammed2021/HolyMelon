@@ -83,3 +83,7 @@ body {
       @apply mx-auto max-w-[1772px] px-4;
    }
 }
+
+.gallery {
+   @apply mb-14 grid auto-rows-[300px] grid-cols-3 gap-5 min-[480px]:grid-cols-6 sm:mb-16 md:mb-20 md:auto-rows-[500px] lg:mb-28 lg:grid-cols-9 xl:mb-[8.4375rem] xl:grid-cols-12;
+}
