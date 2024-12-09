@@ -12,11 +12,27 @@ import IconButton from "@/components/ui/IconButton";
 interface ContentHeaderProps {
    title: string;
    downloadLink: string;
+   created: Date;
+}
+
+function formatDate(dateStr: Date) {
+   return Intl.DateTimeFormat("ru", {
+      day: "numeric",
+      month: "long",
+   }).format(new Date(dateStr));
+}
+
+function formatDateTime(dateStr: Date) {
+   return Intl.DateTimeFormat("en", {
+      day: "numeric",
+      month: "numeric",
+   }).format(new Date(dateStr));
 }
 
 export default function ContentHeader({
    title,
    downloadLink,
+   created,
 }: ContentHeaderProps) {
    return (
       <>
@@ -42,7 +58,10 @@ export default function ContentHeader({
                   {title}
                </h1>
                <p className="text-lg capitalize lg:text-xl">
-                  <time dateTime="09-05">5 Сентября</time>, Астана
+                  <time dateTime={formatDateTime(created).split("/").join("-")}>
+                     {formatDate(created)}
+                  </time>
+                  , Астана
                </p>
             </div>
             <div className="flex flex-wrap items-center justify-between gap-x-12 gap-y-5 lg:gap-x-[4.375rem]">
