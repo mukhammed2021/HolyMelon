@@ -28,7 +28,7 @@ const items = [
       id: crypto.randomUUID(),
       title: "berezka",
       date: "5 Сентября",
-      link: "/",
+      link: "/berezka",
       imgClassName: "aspect-[384/230] object-cover size-full",
       src: "/recent-events/01.jpeg",
       width: 384,
