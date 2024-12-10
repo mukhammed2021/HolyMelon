@@ -19,6 +19,13 @@ interface Photo {
    }[];
 }
 
+interface Preview {
+   resource_id: string;
+   preview: string;
+   title: string;
+   created: Date;
+}
+
 export async function getData(name: string) {
    const requests = [
       `https://cloud-api.yandex.net/v1/disk/resources?path=%2F${name}`,
@@ -40,8 +47,9 @@ export async function getData(name: string) {
    const { name: title } = photoData;
    // Дата
    const { created } = photoData;
-   // Фото
+
    const { items } = photoData._embedded;
+   // Фото
    const photos = items.flatMap((photo: Photo) => {
       return {
          id: photo.resource_id,
@@ -53,4 +61,33 @@ export async function getData(name: string) {
    });
 
    return { title, created, photos, downloadObj };
+}
+
+export async function getPreview(name: string): Promise<Preview> {
+   try {
+      const res = await fetch(
+         `https://cloud-api.yandex.net/v1/disk/resources?path=%2F${name}&preview_size=420x500`,
+         {
+            method: "GET",
+            headers: {
+               Authorization:
+                  "OAuth y0_AgAAAABzwdumAAzHJgAAAAEYcHj8AACXxLtd2hhN2Ki9GL22341umiQBsg",
+            },
+         },
+      );
+
+      const data = await res.json();
+      const { resource_id } = data;
+
+      const { name: title } = data;
+
+      const { created } = data;
+
+      const { items } = data._embedded;
+      const preview = items[0].preview;
+
+      return { resource_id, preview, title, created };
+   } catch (err) {
+      throw err;
+   }
 }
