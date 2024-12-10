@@ -8,25 +8,13 @@ import {
    BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import IconButton from "@/components/ui/IconButton";
+import { formatDate } from "@/utils/helpers";
+import { formatDateTime } from "@/utils/helpers";
 
 interface ContentHeaderProps {
    title: string;
    downloadLink: string;
    created: Date;
-}
-
-function formatDate(dateStr: Date) {
-   return Intl.DateTimeFormat("ru", {
-      day: "numeric",
-      month: "long",
-   }).format(new Date(dateStr));
-}
-
-function formatDateTime(dateStr: Date) {
-   return Intl.DateTimeFormat("en", {
-      day: "numeric",
-      month: "numeric",
-   }).format(new Date(dateStr));
 }
 
 export default function ContentHeader({
@@ -58,7 +46,7 @@ export default function ContentHeader({
                   {title}
                </h1>
                <p className="text-lg capitalize lg:text-xl">
-                  <time dateTime={formatDateTime(created).split("/").join("-")}>
+                  <time dateTime={formatDateTime(created)}>
                      {formatDate(created)}
                   </time>
                   , Астана
