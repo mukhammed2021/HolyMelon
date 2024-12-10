@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { getPreview } from "@/api/api";
 
 const items = [
    {
       id: crypto.randomUUID(),
       title: "aho restaurant",
       date: "5 Сентября",
-      link: "/aho",
+      link: "/ahorestaurant",
       linkClassName: "row-span-2",
       imgClassName: "object-cover size-full",
       src: "/recent-events/01.jpeg",
@@ -69,7 +70,7 @@ const items = [
    },
    {
       id: crypto.randomUUID(),
-      title: "Berezka",
+      title: "berezka",
       date: "5 Сентября",
       link: "/",
       imgClassName: "aspect-[384/230] object-cover size-full",
@@ -90,6 +91,47 @@ const items = [
 ];
 
 export default function RecentEvents() {
+   // const ahoPreview = await getPreview("aho restaurant");
+   // const blaBlaBarPreview = await getPreview("bla bla bar");
+   // const berezkaPreview = await getPreview("berezka");
+   // const shishkaPremiumPreview = await getPreview("shishka premium");
+   // const shishka = await getPreview("shishka");
+
+   // const previews = [
+   //    {
+   //       id: 1,
+   //       ahoPreview,
+   //    },
+   //    {
+   //       id: 2,
+   //       blaBlaBarPreview,
+   //    },
+   //    {
+   //       id: 3,
+   //       berezkaPreview,
+   //    },
+   //    {
+   //       id: 4,
+   //       ahoPreview,
+   //    },
+   //    {
+   //       id: 5,
+   //       shishkaPremiumPreview,
+   //    },
+   //    {
+   //       id: 6,
+   //       shishka,
+   //    },
+   //    {
+   //       id: 7,
+   //       berezkaPreview,
+   //    },
+   //    {
+   //       id: 8,
+   //       ahoPreview,
+   //    },
+   // ];
+
    return (
       <section className="pb-7 md:pt-10 lg:pt-14">
          <div className="container max-w-[101.75rem]">
