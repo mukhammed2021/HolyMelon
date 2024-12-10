@@ -91,51 +91,10 @@ const items = [
 ];
 
 export default function RecentEvents() {
-   // const ahoPreview = await getPreview("aho restaurant");
-   // const blaBlaBarPreview = await getPreview("bla bla bar");
-   // const berezkaPreview = await getPreview("berezka");
-   // const shishkaPremiumPreview = await getPreview("shishka premium");
-   // const shishka = await getPreview("shishka");
-
-   // const previews = [
-   //    {
-   //       id: 1,
-   //       ahoPreview,
-   //    },
-   //    {
-   //       id: 2,
-   //       blaBlaBarPreview,
-   //    },
-   //    {
-   //       id: 3,
-   //       berezkaPreview,
-   //    },
-   //    {
-   //       id: 4,
-   //       ahoPreview,
-   //    },
-   //    {
-   //       id: 5,
-   //       shishkaPremiumPreview,
-   //    },
-   //    {
-   //       id: 6,
-   //       shishka,
-   //    },
-   //    {
-   //       id: 7,
-   //       berezkaPreview,
-   //    },
-   //    {
-   //       id: 8,
-   //       ahoPreview,
-   //    },
-   // ];
-
    return (
       <section className="pb-7 md:pt-10 lg:pt-14">
          <div className="container max-w-[101.75rem]">
-            <h2 className="mb-12 text-[2.6875rem] font-bold uppercase leading-[137.209302%]">
+            <h2 className="mb-12 text-2xl font-bold uppercase leading-[137.209302%] min-[480px]:text-3xl md:text-[2.6875rem]">
                недавние события
             </h2>
             <div className="grid auto-rows-[14.375rem] grid-cols-1 grid-rows-[repeat(3,auto)] gap-5 sm:grid-cols-2 min-[992px]:grid-cols-3 xl:grid-cols-4">
