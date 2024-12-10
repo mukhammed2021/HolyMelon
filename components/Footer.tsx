@@ -6,17 +6,17 @@ const socials = [
    {
       name: "facebook",
       url: "https://www.facebook.com/",
-      icon: "social/facebook.svg",
+      icon: "/social/facebook.svg",
    },
    {
       name: "twitter",
       url: "https://x.com/home",
-      icon: "social/twitter.svg",
+      icon: "/social/twitter.svg",
    },
    {
       name: "linkedin",
       url: "https://www.linkedin.com/feed/",
-      icon: "social/linkedin.svg",
+      icon: "/social/linkedin.svg",
    },
 ];
 
