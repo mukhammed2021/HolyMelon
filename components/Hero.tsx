@@ -25,7 +25,7 @@ export default function Hero() {
                width={1920}
                height={843}
                alt="hero"
-               className="w-full object-cover"
+               className="w-full object-cover brightness-[.30]"
             />
          </div>
          <InfiniteScroller />
