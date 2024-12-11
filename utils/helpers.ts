@@ -2,6 +2,7 @@ export function formatDate(dateStr: Date) {
    return Intl.DateTimeFormat("ru", {
       day: "numeric",
       month: "long",
+      year: "numeric",
    }).format(new Date(dateStr));
 }
 
