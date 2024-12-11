@@ -97,12 +97,14 @@ function InfiniteScroller() {
                   {scrollerTexts.map((text, textIndex) => (
                      <div
                         key={`${index}-${textIndex}`}
-                        className="flex items-center space-x-11 whitespace-nowrap px-11 py-5"
+                        className="flex items-center space-x-11 whitespace-nowrap px-8 py-3 sm:px-11 sm:py-5"
                      >
                         <div className="size-10">
                            <Image src={decor} alt="decor" />
                         </div>
-                        <p className="text-lg uppercase text-white">{text}</p>
+                        <p className="text-sm uppercase text-white sm:text-lg">
+                           {text}
+                        </p>
                      </div>
                   ))}
                </div>
