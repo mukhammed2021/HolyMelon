@@ -15,7 +15,7 @@ export default function Search() {
 
    return isSearchOpen ? (
       <div
-         className={cn("relative z-[2] lg:w-[23.125rem]", {
+         className={cn("relative z-[2] lg:w-64", {
             "max-sm:fixed max-sm:left-0 max-sm:top-[6.25rem] max-sm:w-full":
                isSearchOpen,
          })}
@@ -38,7 +38,7 @@ export default function Search() {
       <button
          type="submit"
          onClick={() => setIsSearchOpen((s) => !s)}
-         className="z-[2] inline-flex size-[3.125rem] items-center justify-center max-[375px]:rounded-2xl rounded-[1.25rem] bg-[#E8E8E8] max-[375px]:size-10"
+         className="z-[2] inline-flex size-[3.125rem] items-center justify-center rounded-[1.25rem] bg-[#E8E8E8] max-[375px]:size-10 max-[375px]:rounded-2xl"
       >
          <SearchIcon size={25} aria-hidden="true" />
       </button>
