@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import RecentEvents from "@/app/RecentEvents";
 import Anonces from "./Anonces";
+import OurBrands from "./OurBrands";
 
 export default function Home() {
    return (
@@ -12,6 +13,7 @@ export default function Home() {
          <main>
             <Hero />
             <RecentEvents />
+            <OurBrands />
             <Anonces />
             <AboutUs />
          </main>
