@@ -172,7 +172,7 @@ function NavMenu({ isMenuOpen }: NavMenuProps) {
                   <DropdownMenuContent className="rounded-[1.375rem] p-0">
                      <DropdownMenuItem className="px-[1.375rem] py-4">
                         <Link
-                           href="/reportage"
+                           href="/reports"
                            className="text-[1.375rem] font-bold uppercase"
                         >
                            Репортажи
