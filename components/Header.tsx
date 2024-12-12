@@ -165,21 +165,7 @@ function NavMenu({ isMenuOpen }: NavMenuProps) {
                <Link href="/brands">бренды</Link>
             </li>
             <li>
-               <DropdownMenu>
-                  <DropdownMenuTrigger className="flex items-center font-bold uppercase">
-                     Фото и видео <ChevronDown />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="rounded-[1.375rem] p-0">
-                     <DropdownMenuItem className="px-[1.375rem] py-4">
-                        <Link
-                           href="/reports"
-                           className="text-[1.375rem] font-bold uppercase"
-                        >
-                           Репортажи
-                        </Link>
-                     </DropdownMenuItem>
-                  </DropdownMenuContent>
-               </DropdownMenu>
+               <Link href="/reports">Фото и видео</Link>
             </li>
             <li>
                <Link href="/anonces">анонсы</Link>

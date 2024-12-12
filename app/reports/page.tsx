@@ -31,7 +31,7 @@ export default function page() {
                         <BreadcrumbSeparator>/</BreadcrumbSeparator>
                         <BreadcrumbItem>
                            <BreadcrumbPage className="font-bold">
-                              Репортажи
+                              Фото и видео
                            </BreadcrumbPage>
                         </BreadcrumbItem>
                      </BreadcrumbList>
