@@ -77,6 +77,7 @@ export async function getPreview(name: string): Promise<Preview> {
       );
 
       const data = await res.json();
+
       const { resource_id } = data;
 
       const { name: title } = data;
@@ -84,7 +85,7 @@ export async function getPreview(name: string): Promise<Preview> {
       const { created } = data;
 
       const { items } = data._embedded;
-      const preview = items[0].preview;
+      const preview = items[0].sizes[0].url;
 
       return { resource_id, preview, title, created };
    } catch (err) {
