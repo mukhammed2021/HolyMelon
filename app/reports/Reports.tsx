@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import DatePicker from "@/components/ui/DatePicker";
 import {
@@ -10,21 +13,47 @@ import {
 } from "@/components/ui/select";
 import { getPreview } from "@/api/api";
 import { formatDate, formatDateTime } from "@/utils/helpers";
+import { Button } from "@/components/ui/button";
 
-export default async function Reports() {
-   const ahoPreview = await getPreview("aho restaurant");
-   const berezkaPreview = await getPreview("berezka");
-   const shishkaPreview = await getPreview("shishka");
-   const shishkaPremiumPreview = await getPreview("shishka premium");
-   const blaBlaBarPreview = await getPreview("bla bla bar");
+interface Preview {
+   resource_id: string;
+   preview: string;
+   title: string;
+   created: Date;
+}
 
-   const previews = [
-      ahoPreview,
-      berezkaPreview,
-      shishkaPreview,
-      shishkaPremiumPreview,
-      blaBlaBarPreview,
-   ];
+export default function Reports() {
+   const [previews, setPreviews] = useState<Preview[]>([]);
+   const [visibleImages] = useState(4);
+   const [pages, setPages] = useState(1);
+
+   const endVisibleImages = pages * visibleImages;
+
+   function handleLoadMore() {
+      setPages((prev) => prev + 1);
+   }
+
+   useEffect(() => {
+      async function fetchPreviews() {
+         const ahoPreview = await getPreview("aho restaurant");
+         const berezkaPreview = await getPreview("berezka");
+         const shishkaPreview = await getPreview("shishka");
+         const shishkaPremiumPreview = await getPreview("shishka premium");
+         const blaBlaBarPreview = await getPreview("bla bla bar");
+         const defaultPreview = await getPreview("default");
+
+         setPreviews([
+            ahoPreview,
+            berezkaPreview,
+            shishkaPreview,
+            shishkaPremiumPreview,
+            blaBlaBarPreview,
+            defaultPreview,
+         ]);
+      }
+
+      fetchPreviews();
+   }, []);
 
    return (
       <>
@@ -149,36 +178,48 @@ export default async function Reports() {
             </Select>
          </div>
          <div className="mb-14 grid auto-rows-[300px] grid-cols-3 gap-5 min-[480px]:grid-cols-6 sm:mb-16 md:mb-20 md:auto-rows-[500px] lg:mb-28 lg:grid-cols-9 xl:mb-[8.4375rem] xl:grid-cols-12">
-            {previews.map(({ resource_id, title, preview, created }) => (
-               <Link
-                  key={resource_id}
-                  href={`/reports/${title.split(" ").join("")}`}
-                  className="group relative col-span-3 text-white"
-               >
-                  <img
-                     src={preview}
-                     width={420}
-                     height={500}
-                     className="size-full rounded-[1.25rem] object-cover brightness-50"
-                     alt={title}
-                  />
-                  <p className="absolute left-5 top-6 rounded-[1.25rem] bg-[#212020]/[.7] px-[1.5625rem] py-[.375rem] text-base backdrop-blur-[56px] 2xl:left-[2.375rem] 2xl:top-10 2xl:text-xl">
-                     Астана
-                  </p>
-                  <div className="absolute bottom-6 left-5 2xl:left-[2.375rem]">
-                     <p className="max-w-[12.8125rem] font-bold uppercase transition-transform group-hover:translate-x-2 xl:text-xl 2xl:text-3xl">
-                        {title}
+            {previews
+               .slice(0, endVisibleImages)
+               .map(({ resource_id, title, preview, created }) => (
+                  <Link
+                     key={resource_id}
+                     href={`/reports/${title.split(" ").join("")}`}
+                     className="group relative col-span-3 text-white"
+                  >
+                     <img
+                        src={preview}
+                        width={420}
+                        height={500}
+                        className="size-full rounded-[1.25rem] object-cover brightness-50"
+                        alt={title}
+                     />
+                     <p className="absolute left-5 top-6 rounded-[1.25rem] bg-[#212020]/[.7] px-[1.5625rem] py-[.375rem] text-base backdrop-blur-[56px] 2xl:left-[2.375rem] 2xl:top-10 2xl:text-xl">
+                        Астана
                      </p>
-                     <time
-                        dateTime={formatDateTime(created)}
-                        className="text-base 2xl:text-xl"
-                     >
-                        {formatDate(created)}
-                     </time>
-                  </div>
-               </Link>
-            ))}
+                     <div className="absolute bottom-6 left-5 2xl:left-[2.375rem]">
+                        <p className="max-w-[12.8125rem] font-bold uppercase transition-transform group-hover:translate-x-2 xl:text-xl 2xl:text-3xl">
+                           {title}
+                        </p>
+                        <time
+                           dateTime={formatDateTime(created)}
+                           className="text-base 2xl:text-xl"
+                        >
+                           {formatDate(created)}
+                        </time>
+                     </div>
+                  </Link>
+               ))}
          </div>
+         {endVisibleImages <= previews.length && (
+            <div className="mb-28 text-center">
+               <Button
+                  onClick={handleLoadMore}
+                  className="h-auto rounded-[3.125rem] border border-[#3D3D3D] bg-[#212020] px-7 py-4 text-lg font-bold md:py-5 md:text-xl lg:px-10 lg:text-2xl xl:px-[3.125rem]"
+               >
+                  Загрузить еще
+               </Button>
+            </div>
+         )}
       </>
    );
 }
