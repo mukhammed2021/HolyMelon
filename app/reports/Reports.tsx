@@ -14,6 +14,7 @@ import {
 import { getPreview } from "@/api/api";
 import { formatDate, formatDateTime } from "@/utils/helpers";
 import { Button } from "@/components/ui/button";
+import Loader from "@/components/Loader";
 
 interface Preview {
    resource_id: string;
@@ -26,6 +27,7 @@ export default function Reports() {
    const [previews, setPreviews] = useState<Preview[]>([]);
    const [visibleImages] = useState(4);
    const [pages, setPages] = useState(1);
+   const [isLoading, setIsLoading] = useState(false);
 
    const endVisibleImages = pages * visibleImages;
 
@@ -35,25 +37,35 @@ export default function Reports() {
 
    useEffect(() => {
       async function fetchPreviews() {
-         const ahoPreview = await getPreview("aho restaurant");
-         const berezkaPreview = await getPreview("berezka");
-         const shishkaPreview = await getPreview("shishka");
-         const shishkaPremiumPreview = await getPreview("shishka premium");
-         const blaBlaBarPreview = await getPreview("bla bla bar");
-         const defaultPreview = await getPreview("default");
+         try {
+            setIsLoading(true);
+            
+            const ahoPreview = await getPreview("aho restaurant");
+            const berezkaPreview = await getPreview("berezka");
+            const shishkaPreview = await getPreview("shishka");
+            const shishkaPremiumPreview = await getPreview("shishka premium");
+            const blaBlaBarPreview = await getPreview("bla bla bar");
+            const defaultPreview = await getPreview("default");
 
-         setPreviews([
-            ahoPreview,
-            berezkaPreview,
-            shishkaPreview,
-            shishkaPremiumPreview,
-            blaBlaBarPreview,
-            defaultPreview,
-         ]);
+            setPreviews([
+               ahoPreview,
+               berezkaPreview,
+               shishkaPreview,
+               shishkaPremiumPreview,
+               blaBlaBarPreview,
+               defaultPreview,
+            ]);
+         } catch (err) {
+            throw err;
+         } finally {
+            setIsLoading(false);
+         }
       }
 
       fetchPreviews();
    }, []);
+
+   if (isLoading) return <Loader />;
 
    return (
       <>
