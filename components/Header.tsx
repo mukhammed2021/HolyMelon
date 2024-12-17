@@ -64,7 +64,7 @@ export default function Header() {
                      Астана <ChevronDown />
                   </DialogTrigger>
                   <DialogContent className="max-h-screen overflow-auto xl:max-w-[71.25rem] xl:rounded-[2.5rem] xl:px-[5.9375rem] xl:py-[5.625rem]">
-                     <DialogHeader className="mb-[4.6875rem] flex-row items-center justify-between">
+                     <DialogHeader className="mb-6 flex-row items-center justify-between md:mb-9 lg:mb-[4.6875rem]">
                         <DialogTitle className="font-normal uppercase lg:text-[2rem]">
                            выбрать город
                         </DialogTitle>
@@ -82,8 +82,8 @@ export default function Header() {
                            className="border-none pl-[2.625rem] placeholder:text-[#c6c6c6]/[.63] lg:text-[2rem]"
                         />
                      </div>
-                     <Separator className="mb-[4.75rem] mt-[.375rem]" />
-                     <ul className="space-y-[3.625rem] leading-none text-black/[.53] lg:text-[2rem]">
+                     <Separator className="mb-6 mt-[.375rem] lg:mb-[4.75rem]" />
+                     <ul className="space-y-9 leading-none text-black/[.53] lg:space-y-[3.625rem] lg:text-[2rem]">
                         {cities.map((city) => (
                            <li key={city}>
                               <button type="button">{city}</button>
