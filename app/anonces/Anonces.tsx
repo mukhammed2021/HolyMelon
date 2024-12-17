@@ -15,7 +15,7 @@ const anonces = [
    {
       id: crypto.randomUUID(),
       src: "/anoncesPage/01.jpeg",
-      href: "/anonces/ahorestaurant",
+      href: "/",
       width: 567,
       height: 500,
       city: "Астана",
@@ -25,7 +25,7 @@ const anonces = [
    {
       id: crypto.randomUUID(),
       src: "/anoncesPage/01.jpeg",
-      href: "/anonces/ahorestaurant",
+      href: "/",
       width: 567,
       height: 500,
       city: "Астана",
@@ -35,7 +35,7 @@ const anonces = [
    {
       id: crypto.randomUUID(),
       src: "/anoncesPage/01.jpeg",
-      href: "/anonces/ahorestaurant",
+      href: "/",
       width: 567,
       height: 500,
       city: "Астана",
@@ -45,7 +45,7 @@ const anonces = [
    {
       id: crypto.randomUUID(),
       src: "/anoncesPage/01.jpeg",
-      href: "/anonces/ahorestaurant",
+      href: "/",
       width: 567,
       height: 500,
       city: "Астана",
@@ -55,7 +55,7 @@ const anonces = [
    {
       id: crypto.randomUUID(),
       src: "/anoncesPage/01.jpeg",
-      href: "/anonces/ahorestaurant",
+      href: "/",
       width: 567,
       height: 500,
       city: "Астана",
@@ -65,7 +65,7 @@ const anonces = [
    {
       id: crypto.randomUUID(),
       src: "/anoncesPage/01.jpeg",
-      href: "/anonces/ahorestaurant",
+      href: "/",
       width: 567,
       height: 500,
       city: "Астана",
