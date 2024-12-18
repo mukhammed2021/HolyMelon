@@ -19,7 +19,7 @@ export default function page() {
             <section className="pt-[9.375rem] md:pt-[12.375rem]">
                <div className="container">
                   <Breadcrumb className="mb-10 sm:mb-[3.5625rem]">
-                     <BreadcrumbList className="uppercase text-black sm:text-base">
+                     <BreadcrumbList className="uppercase text-black sm:text-base dark:text-white">
                         <BreadcrumbItem>
                            <BreadcrumbLink
                               href="/"
