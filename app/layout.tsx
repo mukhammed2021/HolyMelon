@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const aeroport = localFont({
    src: [
@@ -35,7 +36,9 @@ export default function RootLayout({
 }>) {
    return (
       <html lang="ru">
-         <body className={`${aeroport.className} antialiased`}>{children}</body>
+         <body className={`${aeroport.className} antialiased`}>
+            <ThemeProvider defaultTheme="system">{children}</ThemeProvider>
+         </body>
       </html>
    );
 }

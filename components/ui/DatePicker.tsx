@@ -24,7 +24,7 @@ export default function DatePicker() {
             <Button
                variant={"outline"}
                className={cn(
-                  "w-full shrink-0 justify-between rounded-none border-l-0 border-r-0 border-t-0 border-black px-0 text-left font-bold uppercase sm:basis-[9.375rem]",
+                  "w-full shrink-0 justify-between rounded-none border-l-0 border-r-0 border-t-0 border-black px-0 text-left font-bold uppercase dark:border-white sm:basis-[9.375rem]",
                   !date &&
                      "h-auto text-base text-muted-foreground md:text-[1.375rem]",
                )}
@@ -32,7 +32,7 @@ export default function DatePicker() {
                {date ? (
                   format(date, "PPP")
                ) : (
-                  <span className="text-black">год</span>
+                  <span className="text-black dark:text-white">год</span>
                )}
                <ChevronDown />
             </Button>

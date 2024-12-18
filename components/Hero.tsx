@@ -83,7 +83,7 @@ function InfiniteScroller() {
    }, [isAnimating]);
 
    return (
-      <div className="w-full overflow-hidden bg-black">
+      <div className="w-full overflow-hidden bg-black dark:border-y dark:border-[#1c1c21]">
          <div
             ref={scrollRef}
             className="scrollbar-hide flex overflow-x-auto"

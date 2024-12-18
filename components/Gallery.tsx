@@ -63,7 +63,7 @@ export default function Gallery({ photos }: GalleryProps) {
             <div className="mb-28 text-center">
                <Button
                   onClick={loadMore}
-                  className="h-auto rounded-[3.125rem] border border-[#3D3D3D] bg-[#212020] px-7 py-4 text-lg font-bold md:py-5 md:text-xl lg:px-10 lg:text-2xl xl:px-[3.125rem]"
+                  className="h-auto rounded-[3.125rem] border border-[#3D3D3D] bg-[#212020] px-7 py-4 text-lg font-bold md:py-5 md:text-xl lg:px-10 lg:text-2xl xl:px-[3.125rem] dark:text-white dark:hover:bg-neutral-800"
                >
                   Показать еще
                </Button>

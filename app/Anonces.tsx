@@ -1,3 +1,6 @@
+"use client";
+
+import { useTheme } from "@/components/theme-provider";
 import Image from "next/image";
 
 const listAnonces = [
@@ -25,6 +28,8 @@ const listAnonces = [
 ];
 
 export default function Anonces() {
+   const { theme } = useTheme();
+
    return (
       <section className="pb-[4.75rem] pt-[4.75rem]">
          <div className="container">
@@ -40,25 +45,36 @@ export default function Anonces() {
                {listAnonces.map((anonce) => (
                   <li
                      key={anonce.id}
-                     className="group flex items-center gap-[.875rem] rounded-xl border border-[#1c1c21] px-4 py-3 transition-colors hover:bg-[#142535] sm:px-5 sm:py-4"
+                     className="group flex items-center gap-[.875rem] rounded-xl border border-[#1c1c21] px-4 py-3 transition-colors hover:bg-[#142535] sm:px-5 sm:py-4 dark:border-white"
                   >
                      <div className="shrink-0">
-                        <Image
-                           src={anonce.icon}
-                           width={40}
-                           height={40}
-                           className="group-hover:hidden"
-                           alt="icon"
-                        />
-                        <Image
-                           src={anonce.iconDark}
-                           width={40}
-                           height={40}
-                           className="hidden group-hover:block"
-                           alt="icon"
-                        />
+                        {theme !== "dark" ? (
+                           <>
+                              <Image
+                                 src={anonce.icon}
+                                 width={40}
+                                 height={40}
+                                 className="group-hover:hidden"
+                                 alt="icon"
+                              />
+                              <Image
+                                 src={anonce.iconDark}
+                                 width={40}
+                                 height={40}
+                                 className="hidden group-hover:block"
+                                 alt="icon"
+                              />
+                           </>
+                        ) : (
+                           <Image
+                              src={anonce.iconDark}
+                              width={40}
+                              height={40}
+                              alt="icon"
+                           />
+                        )}
                      </div>
-                     <div className="uppercase text-[#060606] group-hover:text-white">
+                     <div className="uppercase text-[#060606] group-hover:text-white dark:text-white">
                         <p className="text-sm sm:text-lg md:text-xl">
                            {anonce.title}
                         </p>

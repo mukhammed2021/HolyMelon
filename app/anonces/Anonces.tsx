@@ -80,7 +80,7 @@ export default function Anonces() {
          <div className="mb-[3.125rem] flex flex-col flex-wrap items-center gap-6 sm:flex-row sm:gap-x-8 md:gap-x-12 lg:gap-x-16 xl:gap-x-[5.3125rem]">
             <DatePicker />
             <Select>
-               <SelectTrigger className="rounded-none border-l-0 border-r-0 border-t-0 border-black px-0 text-base font-bold uppercase sm:basis-[15.625rem] md:text-[1.375rem]">
+               <SelectTrigger className="rounded-none border-l-0 border-r-0 border-t-0 border-black px-0 text-base font-bold uppercase sm:basis-[15.625rem] md:text-[1.375rem] dark:border-white">
                   <SelectValue placeholder="место" />
                </SelectTrigger>
                <SelectContent>
@@ -119,7 +119,7 @@ export default function Anonces() {
                </SelectContent>
             </Select>
             <Select>
-               <SelectTrigger className="rounded-none border-l-0 border-r-0 border-t-0 border-black px-0 text-left text-base font-bold uppercase sm:basis-[15.625rem] md:text-[1.375rem]">
+               <SelectTrigger className="rounded-none border-l-0 border-r-0 border-t-0 border-black px-0 text-left text-base font-bold uppercase sm:basis-[15.625rem] md:text-[1.375rem] dark:border-white">
                   <SelectValue placeholder="город" />
                </SelectTrigger>
                <SelectContent>
@@ -164,7 +164,7 @@ export default function Anonces() {
                </SelectContent>
             </Select>
             <Select>
-               <SelectTrigger className="rounded-none border-l-0 border-r-0 border-t-0 border-black px-0 text-left text-base font-bold uppercase sm:basis-[25rem] md:text-[1.375rem]">
+               <SelectTrigger className="rounded-none border-l-0 border-r-0 border-t-0 border-black px-0 text-left text-base font-bold uppercase sm:basis-[25rem] md:text-[1.375rem] dark:border-white">
                   <SelectValue placeholder="фотограф" />
                </SelectTrigger>
                <SelectContent>
@@ -229,7 +229,7 @@ export default function Anonces() {
             ))}
          </div>
          <div className="mb-6 text-center md:mb-14 lg:mb-24">
-            <Button className="h-auto rounded-[3.125rem] border border-[#3D3D3D] bg-[#212020] px-7 py-4 text-lg font-bold md:py-5 md:text-xl lg:px-10 lg:text-2xl xl:px-[3.125rem]">
+            <Button className="h-auto rounded-[3.125rem] border border-[#3D3D3D] bg-[#212020] px-7 py-4 text-lg font-bold text-white md:py-5 md:text-xl lg:px-10 lg:text-2xl xl:px-[3.125rem] dark:hover:bg-neutral-800">
                Показать еще
             </Button>
          </div>

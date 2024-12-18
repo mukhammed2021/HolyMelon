@@ -19,7 +19,7 @@ export default function IconButton({
       <a
          href={href}
          className={cn(
-            "inline-flex size-[4.375rem] items-center justify-center rounded-full bg-neutral-100 transition-colors hover:bg-neutral-200",
+            "inline-flex size-[4.375rem] items-center justify-center rounded-full bg-neutral-100 transition-colors hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700",
             className,
          )}
       >

@@ -1,12 +1,19 @@
+"use client";
+
 import Image from "next/image";
 import decor from "/public/about-us/decor/01.svg";
+import decorDark from "/public/about-us/decor/decor-dark.svg";
 import logo from "/public/about-us/logo.png";
+import logoDark from "/public/about-us/logo-dark.png";
+import { useTheme } from "./theme-provider";
 
 export default function AboutUs() {
+   const { theme } = useTheme();
+
    return (
       <section className="pb-[5.625rem] pt-[4.75rem] md:pb-28 lg:pb-32 xl:pb-40 2xl:pb-[11.25rem]">
          <div className="container">
-            <div className="mb-5 border-b border-black font-bold uppercase sm:mb-10 md:mb-16">
+            <div className="mb-5 border-b border-black font-bold uppercase sm:mb-10 md:mb-16 dark:border-white">
                <div className="mb-1 text-sm leading-[135%] sm:text-xl">
                   о нас
                </div>
@@ -23,7 +30,11 @@ export default function AboutUs() {
                      этой разнообразной истории.
                   </p>
                   <div className="mb-4 flex items-center gap-[10px] sm:mb-7 md:mb-10">
-                     <Image src={decor} alt="декор" />
+                     {theme !== "dark" ? (
+                        <Image src={decor} alt="декор" />
+                     ) : (
+                        <Image src={decorDark} alt="декор" />
+                     )}
                      <p className="text-3xl">Контакты</p>
                   </div>
                   <address className="not-italic">
@@ -76,12 +87,20 @@ export default function AboutUs() {
                      </div>
                   </address>
                </div>
-               <div className="flex grow justify-center rounded-[40px] bg-[#fbfbfb] py-[3.3125rem] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] max-xl:w-full xl:min-w-[43.75rem]">
-                  <Image
-                     src={logo}
-                     alt="логотип holy melon"
-                     className="aspect-[450/405] object-cover"
-                  />
+               <div className="flex grow justify-center rounded-[40px] bg-[#fbfbfb] py-[3.3125rem] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] max-xl:w-full xl:min-w-[43.75rem] dark:bg-black dark:shadow-[inset_0_2px_10px_2px_rgba(255,255,255,0.5)]">
+                  {theme !== "dark" ? (
+                     <Image
+                        src={logo}
+                        alt="логотип holy melon"
+                        className="aspect-[450/405] object-cover"
+                     />
+                  ) : (
+                     <Image
+                        src={logoDark}
+                        alt="логотип holy melon"
+                        className="aspect-[450/405] object-cover"
+                     />
+                  )}
                </div>
             </div>
          </div>

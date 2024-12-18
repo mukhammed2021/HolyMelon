@@ -21,7 +21,7 @@ export default function page() {
             <section>
                <div className="container">
                   <Breadcrumb className="mb-10 sm:mb-[3.5625rem]">
-                     <BreadcrumbList className="uppercase text-black sm:text-base">
+                     <BreadcrumbList className="uppercase text-black sm:text-base dark:text-white">
                         <BreadcrumbItem>
                            <BreadcrumbLink
                               href="/"
@@ -41,7 +41,7 @@ export default function page() {
                   <h1 className="mb-4 text-2xl font-bold uppercase sm:mb-[2.125rem] sm:text-5xl">
                      анонсы
                   </h1>
-                  <Separator className="mb-10 bg-black sm:mb-16" />
+                  <Separator className="mb-10 bg-black sm:mb-16 dark:bg-white" />
                   <Anonces />
                </div>
             </section>

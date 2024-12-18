@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronDown, MenuIcon, Moon, SearchIcon, X } from "lucide-react";
+import { ChevronDown, MenuIcon, Moon, SearchIcon, Sun, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -20,9 +20,10 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Search from "./Search";
+import { ToggleTheme } from "./toggle-theme";
+import { useTheme } from "./theme-provider";
 
 interface NavMenuProps {
    isMenuOpen: boolean;
@@ -51,7 +52,7 @@ export default function Header() {
    }, []);
 
    return (
-      <header className="fixed left-0 top-0 z-10 w-full bg-white">
+      <header className="fixed left-0 top-0 z-10 w-full bg-white dark:bg-[#303030]">
          <div className="container flex min-h-[6.25rem] items-center justify-between gap-x-4">
             <div className="flex items-center gap-x-3 md:gap-x-5 lg:gap-x-8 xl:flex-1 xl:gap-x-12">
                <Logo />
@@ -86,7 +87,9 @@ export default function Header() {
                      <ul className="space-y-9 leading-none text-black/[.53] lg:space-y-[3.625rem] lg:text-[2rem]">
                         {cities.map((city) => (
                            <li key={city}>
-                              <button type="button">{city}</button>
+                              <button type="button" className="dark:text-white">
+                                 {city}
+                              </button>
                            </li>
                         ))}
                      </ul>
@@ -99,7 +102,7 @@ export default function Header() {
                   <DropdownMenuTrigger className="hidden font-bold uppercase xl:flex xl:items-center">
                      о нас <ChevronDown />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="rounded-[1.375rem] p-0">
+                  <DropdownMenuContent className="rounded-[1.375rem] p-0 dark:bg-[#303030]">
                      <DropdownMenuItem className="px-[1.375rem] py-4">
                         <Link
                            href="/staff"
@@ -112,13 +115,7 @@ export default function Header() {
                </DropdownMenu>
                <div className="flex items-center gap-4">
                   <Search />
-                  <Button
-                     variant="icon"
-                     size="icon"
-                     className="bg-[#010e2a]/[.92] max-[375px]:size-10 max-[375px]:rounded-2xl"
-                  >
-                     <Moon className="text-white" />
-                  </Button>
+                  <ToggleTheme />
                   <button
                      type="button"
                      onClick={() => setIsMenuOpen((open) => !open)}
@@ -138,9 +135,15 @@ export default function Header() {
 }
 
 function Logo() {
+   const { theme } = useTheme();
+
    return (
       <Link href="/" className="z-[2]">
-         <Image src="/logo.png" width={120} height={74} alt="логотип" />
+         {theme !== "dark" ? (
+            <Image src="/logo.png" width={120} height={74} alt="логотип" />
+         ) : (
+            <Image src="/logo-dark.png" width={120} height={74} alt="логотип" />
+         )}
       </Link>
    );
 }

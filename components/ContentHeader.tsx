@@ -25,7 +25,7 @@ export default function ContentHeader({
    return (
       <>
          <Breadcrumb className="mb-10">
-            <BreadcrumbList className="uppercase text-black sm:text-base">
+            <BreadcrumbList className="uppercase text-black sm:text-base dark:text-white">
                <BreadcrumbItem>
                   <BreadcrumbLink
                      href="/"
