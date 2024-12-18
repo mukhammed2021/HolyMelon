@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronDown, MenuIcon, Moon, SearchIcon, Sun, X } from "lucide-react";
+import { ChevronDown, MenuIcon, SearchIcon, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import {
