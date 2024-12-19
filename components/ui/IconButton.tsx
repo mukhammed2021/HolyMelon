@@ -1,5 +1,3 @@
-"use client"
-
 import { Forward } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -19,18 +17,15 @@ export default function IconButton({
    className,
    href = "",
 }: IconButtonProps) {
-   function handleCopyClick() {
+   async function handleCopyClick() {
       const shareData = {
          url: window.location.href,
       };
-      async function getUrl() {
-         try {
-            await navigator.share(shareData);
-         } catch (err) {
-            console.error(err);
-         }
+      try {
+         await navigator.share(shareData);
+      } catch (err) {
+         console.error(err);
       }
-      getUrl();
    }
 
    if (Icon === Forward)
