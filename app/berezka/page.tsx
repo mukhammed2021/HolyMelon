@@ -4,7 +4,7 @@ import Gallery from "@/components/Gallery";
 import Header from "@/components/Header";
 import { getData } from "@/api/api";
 
-export default async function AhoPage() {
+export default async function BerezkaPage() {
    const data = await getData("berezka");
    const { title, photos, downloadObj, created } = data;
 
