@@ -1,3 +1,5 @@
+import { Forward } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 interface IconButtonProps {
@@ -8,6 +10,10 @@ interface IconButtonProps {
    href?: string;
 }
 
+const shareData = {
+   url: window.location.href,
+};
+
 export default function IconButton({
    icon: Icon,
    size = 40,
@@ -15,6 +21,30 @@ export default function IconButton({
    className,
    href = "",
 }: IconButtonProps) {
+   function handleCopyClick() {
+      async function getUrl() {
+         try {
+            await navigator.share(shareData);
+         } catch (err) {
+            console.error(err);
+         }
+      }
+      getUrl();
+   }
+
+   if (Icon === Forward)
+      return (
+         <Button
+            onClick={handleCopyClick}
+            className={cn(
+               "inline-flex size-[4.375rem] items-center justify-center rounded-full bg-neutral-100 text-black transition-colors hover:bg-neutral-200 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700 [&_svg]:size-auto",
+               className,
+            )}
+         >
+            <Forward size={size} className={iconClassName} />
+         </Button>
+      );
+
    return (
       <a
          href={href}
