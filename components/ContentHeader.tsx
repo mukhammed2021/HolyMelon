@@ -1,3 +1,5 @@
+"use client";
+
 import { Camera, Download, Forward } from "lucide-react";
 import {
    Breadcrumb,
