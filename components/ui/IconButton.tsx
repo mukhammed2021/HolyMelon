@@ -10,10 +10,6 @@ interface IconButtonProps {
    href?: string;
 }
 
-const shareData = {
-   url: window.location.href,
-};
-
 export default function IconButton({
    icon: Icon,
    size = 40,
@@ -23,6 +19,10 @@ export default function IconButton({
 }: IconButtonProps) {
    function handleCopyClick() {
       async function getUrl() {
+         const shareData = {
+            url: window.location.href,
+         };
+
          try {
             await navigator.share(shareData);
          } catch (err) {
