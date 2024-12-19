@@ -1,3 +1,5 @@
+"use client";
+
 import { Download, Forward } from "lucide-react";
 import IconButton from "@/components/ui/IconButton";
 import Image from "next/image";
