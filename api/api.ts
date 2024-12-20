@@ -35,7 +35,7 @@ export async function getData(name: string) {
          method: "GET",
          headers: {
             Authorization:
-               "OAuth y0_AgAAAABzwdumAAzHJgAAAAEYcHj8AACXxLtd2hhN2Ki9GL22341umiQBsg",
+               "OAuth y0_AgAAAAB64smFAAz8zQAAAAEc7G8dAABxKsTxTQ9BpLnROYn1Mmf0LOMo4A",
          },
       }).then((res) => res.json()),
    );
@@ -71,7 +71,7 @@ export async function getPreview(name: string): Promise<Preview> {
             method: "GET",
             headers: {
                Authorization:
-                  "OAuth y0_AgAAAABzwdumAAzHJgAAAAEYcHj8AACXxLtd2hhN2Ki9GL22341umiQBsg",
+                  "OAuth y0_AgAAAAB64smFAAz8zQAAAAEc7G8dAABxKsTxTQ9BpLnROYn1Mmf0LOMo4A",
             },
          },
       );
