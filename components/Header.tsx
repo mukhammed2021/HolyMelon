@@ -52,7 +52,7 @@ export default function Header() {
    }, []);
 
    return (
-      <header className="fixed left-0 top-0 z-10 w-full bg-white dark:bg-[#303030]">
+      <header className="sticky left-0 top-0 z-10 w-full bg-white dark:bg-[#303030]">
          <div className="container flex min-h-[6.25rem] items-center justify-between gap-x-4">
             <div className="flex items-center gap-x-3 md:gap-x-5 lg:gap-x-8 xl:flex-1 xl:gap-x-12">
                <Logo />
