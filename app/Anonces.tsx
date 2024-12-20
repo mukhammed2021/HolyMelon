@@ -31,7 +31,7 @@ export default function Anonces() {
    const { theme } = useTheme();
 
    return (
-      <section className="pb-[4.75rem] pt-[4.75rem]">
+      <section className="pb-[4.75rem] pt-10 sm:pt-[4.75rem]">
          <div className="container">
             <h2 className="mb-8 text-2xl font-bold uppercase leading-[137.209302%] min-[480px]:text-3xl md:text-[2.6875rem]">
                Анонсы

@@ -43,7 +43,7 @@ export default function OurBrands() {
    return (
       <section className="pb-[2.375rem] pt-6 md:pb-[4.75rem] md:pt-12">
          <div className="container">
-            <h2 className="mb-10 text-[2.6875rem] font-bold uppercase sm:mb-12 md:mb-16 lg:mb-24">
+            <h2 className="mb-10 text-2xl font-bold uppercase leading-none sm:mb-12 md:mb-16 md:text-[2.6875rem] lg:mb-24">
                наши бренды
             </h2>
          </div>

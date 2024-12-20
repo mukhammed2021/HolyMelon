@@ -1,0 +1,409 @@
+.aho-block {
+   margin-top: 63px;
+   margin-inline: auto;
+   padding-inline: 1.15%;
+
+   max-width: 1740px;
+}
+
+.aho-section {
+   display: flex;
+}
+
+.aho-section > div {
+   width: 50% !important;
+}
+
+.aho-top-section {
+   display: flex;
+   flex-direction: column;
+   gap: 16px; /* Отступы между блоками */
+   padding-inline: 4.69%;
+}
+
+.restaurant-info {
+   font-family: "Arial", sans-serif;
+   line-height: 1.6;
+   color: #333;
+}
+
+.breadcrumbs {
+   font-family: "Aeroport", sans-serif;
+   font-size: 16px;
+   font-weight: 700;
+   margin-bottom: 10px;
+   margin-bottom: 78px;
+}
+
+.category-stars img {
+   max-width: 61px;
+   width: 100%;
+   height: auto;
+   margin-bottom: 10px;
+}
+
+.restaurant-title {
+   font-family: "Aeroport", sans-serif;
+   font-size: clamp(24px, 3vw, 48px);
+   font-weight: 700;
+   line-height: 1.2;
+   margin-bottom: 8px;
+}
+
+.restaurant-subtitle {
+   color: #000;
+   margin-bottom: 20px;
+   font-family: Aeroport;
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 24px;
+   text-align: left;
+}
+
+.restaurant-description {
+   font-size: 20px;
+   font-family: "Aeroport", sans-serif;
+   line-height: 1.5;
+   margin-bottom: 20px;
+}
+
+.restaurant-address,
+.restaurant-link,
+.restaurant-contacts,
+.restaurant-hours {
+   display: flex;
+   align-items: center;
+   gap: 8px; /* Отступ между иконкой и текстом */
+   font-size: 16px;
+   margin-bottom: 12px;
+}
+
+.restaurant-address img,
+.restaurant-link img,
+.restaurant-contacts img,
+.restaurant-hours img {
+   width: 30px; /* Размер иконок */
+   height: 30px;
+}
+
+.restaurant-hours span {
+   color: green;
+   font-weight: bold;
+}
+.restaurant-contacts div,
+.restaurant-hours div {
+   display: flex;
+   flex-direction: column;
+}
+
+/* SWIPER */
+
+img {
+   object-position: center; /* Центрирует изображение по вертикали и горизонтали */
+}
+
+.swiper-block {
+   display: flex;
+   justify-content: space-between;
+   max-width: 1007px;
+   width: 100% !important;
+   height: 100% !important;
+   position: relative;
+}
+
+.mySwiper {
+   max-width: 230px;
+   max-height: 564px;
+   width: 100% !important;
+   height: 100% !important;
+   width: 20%;
+}
+
+.mySwiper2 {
+   max-width: 777px !important;
+   max-height: 488px !important;
+   height: 100% !important;
+   width: 100% !important;
+   position: static;
+   width: 75%;
+}
+
+.mySwiper2 .swiper-wrapper {
+   max-width: 777px !important;
+   max-height: 488px !important;
+   height: 100% !important;
+   width: 100% !important;
+}
+
+.mySwiper .swiper-wrapper {
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+   align-items: end;
+}
+
+.mySwiper2 .swiper-wrapper .swiper-slide {
+   border-radius: 30px;
+}
+
+.mySwiper2 .swiper-wrapper .swiper-slide img {
+   object-position: center; /* Центрирует изображение по вертикали и горизонтали */
+   object-fit: cover;
+   max-width: 777px !important;
+   max-height: 488px !important;
+   height: 100% !important;
+   width: 100% !important;
+   border-radius: 50px;
+}
+
+.mySwiper .swiper-wrapper .swiper-slide {
+   max-width: 203px !important;
+   max-height: 100px !important;
+   width: 100% !important;
+   margin-right: 0 !important;
+}
+
+.mySwiper .swiper-wrapper .swiper-slide img {
+   max-width: 203px;
+   max-height: 100px;
+   width: 100% !important;
+   height: 100% !important;
+   border-radius: 20px;
+   object-fit: cover;
+   object-position: center; /* Центрирует изображение по вертикали и горизонтали */
+}
+.swiper-button-next,
+.swiper-button-prev {
+   border: 5px solid #dfdfdf !important;
+   border-radius: 30px !important;
+   width: 60px;
+   height: 60px;
+   top: 93% !important;
+   z-index: 10; /* Кнопки будут сверху */
+}
+
+.swiper-button-prev {
+   left: 25%;
+}
+
+.swiper-button-next {
+   left: 43%;
+}
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+   content: url("/AHO-restaurant/arrow-left.png");
+}
+
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+   content: url("/AHO-restaurant/arrow-right.png");
+}
+
+@media (max-width: 1400px) {
+   .aho-section {
+      flex-direction: column-reverse; /* Элементы сверху вниз, но перевернуто */
+      align-items: center; /* Центровка по горизонтали */
+      gap: 100px;
+   }
+
+   .swiper-block {
+      flex-direction: column-reverse; /* Элементы сверху вниз, но перевернуто */
+      align-items: center; /* Центровка по горизонтали */
+   }
+
+   .aho-section > div {
+      width: 100% !important;
+   }
+
+   .mySwiper {
+      margin-bottom: 20px; /* Отступ между каруселью и главным блоком */
+      max-width: 100%;
+      max-height: 100%;
+      width: 100% !important;
+      height: 100% !important;
+   }
+
+   .mySwiper2 {
+      margin-inline: auto;
+      width: 90% !important;
+   }
+
+   .mySwiper > .swiper-wrapper {
+      flex-direction: row; /* Выстраивает изображения в строку */
+      justify-content: center; /* Центрирует их */
+      max-width: auto !important;
+      width: 100% !important;
+      gap: 6px;
+   }
+
+   .mySwiper > .swiper-slide img {
+      max-width: 100px; /* Пропорционально уменьшает изображение */
+
+      height: auto; /* Сохраняет пропорции */
+   }
+
+   .mySwiper2 .swiper-wrapper .swiper-slide img {
+      border-radius: 30px;
+   }
+
+   .mySwiper > .swiper-wrapper > .swiper-slide > img {
+      border-radius: 10px !important;
+   }
+
+   .swiper-button-next,
+   .swiper-button-prev {
+      top: 107% !important;
+   }
+
+   .swiper-button-prev {
+      left: 40%;
+   }
+
+   .swiper-button-next {
+      left: 52%;
+   }
+
+   .aho-bottom-section {
+      flex-direction: column;
+   }
+}
+
+@media (max-width: 768px) {
+   .mySwiper > .swiper-wrapper > .swiper-slide,
+   .mySwiper > .swiper-wrapper > .swiper-slide > img {
+      max-width: 93px !important;
+      max-height: 56px !important;
+   }
+
+   .mySwiper2 {
+      height: 300px !important;
+   }
+
+   .swiper-button-prev {
+      left: 30%;
+   }
+
+   .swiper-button-next {
+      left: 55%;
+   }
+}
+
+/* bottom */
+
+.aho-bottom-section {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 60px;
+}
+
+/* Базовые стили */
+
+.container {
+   width: 90%;
+   margin: 0 auto;
+   padding: 20px 0;
+}
+
+/* Стили для блоков */
+.features,
+.special-offers {
+   margin-bottom: 20px;
+}
+
+.special-offers h2 {
+   font-family: Aeroport;
+   font-size: 30px;
+   font-weight: 700;
+   line-height: 45px;
+   text-align: left;
+   text-underline-position: from-font;
+   text-decoration-skip-ink: none;
+}
+
+.feature-item {
+   font-family: Aeroport;
+   font-size: 20px;
+   font-weight: 400;
+   line-height: 30px;
+   text-align: left;
+   text-underline-position: from-font;
+   text-decoration-skip-ink: none;
+}
+
+.feature-item,
+.offer-item {
+   border: 1px solid #ddd;
+   border-radius: 8px;
+   margin: 10px 0;
+   padding: 15px;
+}
+
+.offer-item {
+   border: 1px solid #000;
+   border-left: 0;
+   border-right: 0;
+   border-bottom: 0;
+   border-radius: 0;
+   padding-left: 0;
+}
+
+.feature-item h3,
+.offer-item h3 {
+   margin: 0 0 5px;
+   font-size: 1.1em;
+}
+
+.feature-item p {
+   font-family: Aeroport;
+   font-size: 14px;
+   font-weight: 300;
+   line-height: 21px;
+   text-align: left;
+   text-underline-position: from-font;
+   text-decoration-skip-ink: none;
+}
+
+.feature-item p,
+.offer-item p {
+   margin: 0;
+   font-size: 0.9em;
+   color: #666;
+}
+
+/* Галерея */
+.gallery {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 10px;
+}
+
+.gallery-item img {
+   width: 100%;
+   border-radius: 8px;
+}
+
+.gallery-item.large {
+   grid-column: span 2;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+   .gallery {
+      grid-template-columns: 1fr;
+   }
+
+   .gallery-item.large {
+      grid-column: span 1;
+   }
+
+   .feature-item h3,
+   .offer-item h3 {
+      font-size: 1em;
+   }
+
+   .feature-item p,
+   .offer-item p {
+      font-size: 0.8em;
+   }
+}
