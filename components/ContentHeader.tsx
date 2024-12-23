@@ -26,7 +26,7 @@ export default function ContentHeader({
 }: ContentHeaderProps) {
    return (
       <>
-         <Breadcrumb className="mb-10">
+         <Breadcrumb className="mb-5 sm:mb-10">
             <BreadcrumbList className="uppercase text-black sm:text-base dark:text-white">
                <BreadcrumbItem>
                   <BreadcrumbLink
@@ -42,7 +42,7 @@ export default function ContentHeader({
                </BreadcrumbItem>
             </BreadcrumbList>
          </Breadcrumb>
-         <div className="mb-16 flex flex-col justify-between gap-5 min-[830px]:flex-row lg:mb-24 lg:items-center">
+         <div className="mb-10 flex flex-col justify-between gap-5 sm:mb-16 min-[830px]:flex-row lg:mb-24 lg:items-center">
             <div>
                <h1 className="mb-[.625rem] text-3xl font-bold uppercase sm:text-4xl lg:text-5xl">
                   {title}

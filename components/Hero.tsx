@@ -99,7 +99,7 @@ function InfiniteScroller() {
                         key={`${index}-${textIndex}`}
                         className="flex items-center space-x-6 whitespace-nowrap px-6 py-3 sm:space-x-11 sm:px-11 sm:py-5"
                      >
-                        <div className="size-10">
+                        <div className="size-7 sm:size-10">
                            <Image src={decor} alt="decor" />
                         </div>
                         <p className="text-sm uppercase text-white sm:text-lg">

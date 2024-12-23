@@ -53,7 +53,7 @@ export default function Header() {
 
    return (
       <header className="sticky left-0 top-0 z-10 w-full bg-white dark:bg-[#303030]">
-         <div className="container flex min-h-[6.25rem] items-center justify-between gap-x-4">
+         <div className="container flex min-h-[4.375rem] items-center justify-between gap-x-4 md:min-h-[6.25rem]">
             <div className="flex items-center gap-x-3 md:gap-x-5 lg:gap-x-8 xl:flex-1 xl:gap-x-12">
                <Logo />
                <Separator
@@ -119,12 +119,12 @@ export default function Header() {
                   <button
                      type="button"
                      onClick={() => setIsMenuOpen((open) => !open)}
-                     className="max-[375px]:size-10 xl:hidden"
+                     className="max-md:size-10 xl:hidden"
                   >
                      {isMenuOpen ? (
-                        <X size={50} className="max-[375px]:size-10" />
+                        <X size={50} className="max-md:size-10" />
                      ) : (
-                        <MenuIcon size={50} className="max-[375px]:size-10" />
+                        <MenuIcon size={50} className="max-md:size-10" />
                      )}
                   </button>
                </div>
@@ -140,9 +140,21 @@ function Logo() {
    return (
       <Link href="/" className="z-[2]">
          {theme !== "dark" ? (
-            <Image src="/logo.png" width={120} height={74} alt="логотип" />
+            <Image
+               src="/logo.png"
+               width={120}
+               height={74}
+               alt="логотип"
+               className="h-[3.125rem] w-[5rem] md:h-[4.625rem] md:w-[7.5rem]"
+            />
          ) : (
-            <Image src="/logo-dark.png" width={120} height={74} alt="логотип" />
+            <Image
+               src="/logo-dark.png"
+               width={120}
+               height={74}
+               alt="логотип"
+               className="h-[3.125rem] w-[5rem] md:h-[4.625rem] md:w-[7.5rem]"
+            />
          )}
       </Link>
    );

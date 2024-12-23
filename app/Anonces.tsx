@@ -31,9 +31,9 @@ export default function Anonces() {
    const { theme } = useTheme();
 
    return (
-      <section className="pb-[4.75rem] pt-10 sm:pt-[4.75rem]">
+      <section className="pb-[2.375rem] pt-10 sm:pb-[4.75rem] sm:pt-[4.75rem]">
          <div className="container">
-            <h2 className="mb-8 text-2xl font-bold uppercase leading-[137.209302%] min-[480px]:text-3xl md:text-[2.6875rem]">
+            <h2 className="mb-6 text-2xl font-bold uppercase leading-[137.209302%] min-[480px]:text-3xl sm:mb-8 md:text-[2.6875rem]">
                Анонсы
             </h2>
             <p className="mb-6 text-base sm:text-lg md:text-xl lg:text-2xl">
@@ -45,7 +45,7 @@ export default function Anonces() {
                {listAnonces.map((anonce) => (
                   <li
                      key={anonce.id}
-                     className="group flex items-center gap-[.875rem] rounded-xl border border-[#1c1c21] px-4 py-3 transition-colors hover:bg-[#142535] sm:px-5 sm:py-4 dark:border-white"
+                     className="flex items-center gap-2 rounded-xl border border-[#1c1c21] px-3 py-2 transition-colors sm:gap-[.875rem] sm:px-5 sm:py-4 dark:border-white"
                   >
                      <div className="shrink-0">
                         {theme !== "dark" ? (
@@ -54,14 +54,14 @@ export default function Anonces() {
                                  src={anonce.icon}
                                  width={40}
                                  height={40}
-                                 className="group-hover:hidden"
+                                 className="size-7 sm:size-10"
                                  alt="icon"
                               />
                               <Image
                                  src={anonce.iconDark}
                                  width={40}
                                  height={40}
-                                 className="hidden group-hover:block"
+                                 className="hidden size-7 sm:size-10"
                                  alt="icon"
                               />
                            </>
@@ -74,7 +74,7 @@ export default function Anonces() {
                            />
                         )}
                      </div>
-                     <div className="uppercase text-[#060606] group-hover:text-white dark:text-white">
+                     <div className="uppercase text-[#060606] dark:text-white">
                         <p className="text-sm sm:text-lg md:text-xl">
                            {anonce.title}
                         </p>

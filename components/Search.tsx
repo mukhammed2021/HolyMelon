@@ -38,7 +38,7 @@ export default function Search() {
       <button
          type="submit"
          onClick={() => setIsSearchOpen((s) => !s)}
-         className="z-[2] inline-flex size-[3.125rem] items-center justify-center rounded-[1.25rem] bg-[#E8E8E8] dark:bg-[#373737] max-[375px]:size-10 max-[375px]:rounded-2xl"
+         className="z-[2] inline-flex size-[3.125rem] items-center justify-center rounded-[1.25rem] bg-[#E8E8E8] dark:bg-[#373737] max-md:size-10 max-md:rounded-2xl"
       >
          <SearchIcon size={25} aria-hidden="true" />
       </button>

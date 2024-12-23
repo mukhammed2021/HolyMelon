@@ -20,7 +20,7 @@ export default function page() {
             <Hero />
             <section>
                <div className="container">
-                  <Breadcrumb className="mb-10 sm:mb-[3.5625rem]">
+                  <Breadcrumb className="mb-5 sm:mb-[3.5625rem]">
                      <BreadcrumbList className="uppercase text-black sm:text-base dark:text-white">
                         <BreadcrumbItem>
                            <BreadcrumbLink
@@ -38,10 +38,10 @@ export default function page() {
                         </BreadcrumbItem>
                      </BreadcrumbList>
                   </Breadcrumb>
-                  <h1 className="mb-4 text-2xl font-bold uppercase sm:mb-[2.125rem] sm:text-5xl">
+                  <h1 className="mb-2 text-xl font-bold uppercase sm:mb-[2.125rem] sm:text-5xl">
                      анонсы
                   </h1>
-                  <Separator className="mb-10 bg-black sm:mb-16 dark:bg-white" />
+                  <Separator className="mb-5 bg-black sm:mb-16 dark:bg-white" />
                   <Anonces />
                </div>
             </section>

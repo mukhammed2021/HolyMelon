@@ -12,7 +12,7 @@ export default async function BerezkaPage() {
       <div className="wrapper">
          <Header />
          <main>
-            <section className="pt-[9.375rem] md:pt-[12.375rem]">
+            <section className="pt-5 md:pt-[6.125rem]">
                <div className="container">
                   <ContentHeader
                      title={title}

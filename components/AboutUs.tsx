@@ -11,7 +11,7 @@ export default function AboutUs() {
    const { theme } = useTheme();
 
    return (
-      <section className="pb-[5.625rem] pt-[4.75rem] md:pb-28 lg:pb-32 xl:pb-40 2xl:pb-[11.25rem]">
+      <section className="pb-11 pt-[2.375rem] sm:pb-[5.625rem] sm:pt-[4.75rem] md:pb-28 lg:pb-32 xl:pb-40 2xl:pb-[11.25rem]">
          <div className="container">
             <div className="mb-5 border-b border-black font-bold uppercase sm:mb-10 md:mb-16 dark:border-white">
                <div className="mb-1 text-sm leading-[135%] sm:text-xl">
@@ -23,7 +23,7 @@ export default function AboutUs() {
             </div>
             <div className="flex flex-col-reverse items-center justify-between gap-y-9 max-sm:text-base max-[480px]:text-sm lg:gap-x-10 xl:flex-row xl:gap-x-16 2xl:gap-x-[5.3125rem]">
                <div className="xl:basis-[703px]">
-                  <p className="mb-10 sm:mb-14 md:mb-[4.625rem]">
+                  <p className="mb-8 sm:mb-14 md:mb-[4.625rem]">
                      Cтремление всей жизни запечатлеть необычное в обычном,
                      заморозить мимолетные моменты времени и поделиться красотой
                      мира, какой мы все видим. Вдохновление в каждом уголке в
@@ -31,11 +31,19 @@ export default function AboutUs() {
                   </p>
                   <div className="mb-4 flex items-center gap-[10px] sm:mb-7 md:mb-10">
                      {theme !== "dark" ? (
-                        <Image src={decor} alt="декор" />
+                        <Image
+                           src={decor}
+                           alt="декор"
+                           className="size-7 sm:size-10"
+                        />
                      ) : (
-                        <Image src={decorDark} alt="декор" />
+                        <Image
+                           src={decorDark}
+                           alt="декор"
+                           className="size-7 sm:size-10"
+                        />
                      )}
-                     <p className="text-3xl">Контакты</p>
+                     <p className="text-2xl sm:text-3xl">Контакты</p>
                   </div>
                   <address className="not-italic">
                      <p className="text-[1.375rem]">Почта</p>
@@ -87,7 +95,7 @@ export default function AboutUs() {
                      </div>
                   </address>
                </div>
-               <div className="flex grow justify-center rounded-[40px] bg-[#fbfbfb] py-[3.3125rem] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] max-xl:w-full xl:min-w-[43.75rem] dark:bg-black dark:shadow-[inset_0_2px_10px_2px_rgba(255,255,255,0.5)]">
+               <div className="flex grow justify-center rounded-[40px] bg-[#fbfbfb] py-5 shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] max-xl:w-full sm:py-[3.3125rem] xl:min-w-[43.75rem] dark:bg-black dark:shadow-[inset_0_2px_10px_2px_rgba(255,255,255,0.5)]">
                   {theme !== "dark" ? (
                      <Image
                         src={logo}

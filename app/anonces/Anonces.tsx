@@ -197,7 +197,7 @@ export default function Anonces() {
                </SelectContent>
             </Select>
          </div>
-         <div className="mb-10 grid auto-rows-[250px] grid-cols-[repeat(auto-fit,minmax(290px,1fr))] gap-x-5 gap-y-[1.875rem] min-[482px]:grid-cols-[repeat(auto-fit,minmax(450px,1fr))] md:mb-[4.8125rem] lg:auto-rows-[500px]">
+         <div className="mb-10 grid auto-rows-[250px] grid-cols-[repeat(auto-fit,minmax(290px,1fr))] gap-5 min-[482px]:grid-cols-[repeat(auto-fit,minmax(450px,1fr))] md:mb-[4.8125rem] lg:auto-rows-[500px]">
             {anonces.map((anonce) => (
                <Link
                   key={anonce.id}
@@ -229,7 +229,7 @@ export default function Anonces() {
             ))}
          </div>
          <div className="mb-6 text-center md:mb-14 lg:mb-24">
-            <Button className="h-auto rounded-[3.125rem] border border-[#3D3D3D] bg-[#212020] px-7 py-4 text-lg font-bold text-white md:py-5 md:text-xl lg:px-10 lg:text-2xl xl:px-[3.125rem] dark:hover:bg-neutral-800">
+            <Button className="h-auto rounded-[3.125rem] border border-[#3D3D3D] bg-[#212020] px-5 py-3 text-lg font-bold text-white md:py-5 md:text-xl lg:px-10 lg:text-2xl xl:px-[3.125rem] dark:hover:bg-neutral-800">
                Показать еще
             </Button>
          </div>

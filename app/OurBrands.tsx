@@ -48,7 +48,7 @@ export default function OurBrands() {
             </h2>
          </div>
          <div className="container max-w-[101.75rem]">
-            <div className="flex h-[870px] flex-col gap-[2.625rem] overflow-hidden xl:flex-row">
+            <div className="flex h-[780px] flex-col gap-8 overflow-hidden sm:h-[870px] sm:gap-[2.625rem] xl:flex-row">
                {brands.map((brand, index) => (
                   <div
                      key={brand.id}
