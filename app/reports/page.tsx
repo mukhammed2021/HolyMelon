@@ -16,7 +16,7 @@ export default function page() {
       <div className="wrapper">
          <Header />
          <main>
-            <section className="pt-[9.375rem] md:pt-[12.375rem]">
+            <section className="pt-5 md:pt-[6.125rem]">
                <div className="container">
                   <Breadcrumb className="mb-10 sm:mb-[3.5625rem]">
                      <BreadcrumbList className="uppercase text-black sm:text-base dark:text-white">
@@ -39,7 +39,7 @@ export default function page() {
                   <h1 className="mb-4 text-2xl font-bold uppercase sm:mb-[2.125rem] sm:text-5xl">
                      репортажи
                   </h1>
-                  <Separator className="mb-10 bg-black sm:mb-16" />
+                  <Separator className="mb-5 bg-black sm:mb-16" />
                   <Reports />
                </div>
             </section>
