@@ -47,6 +47,12 @@ const venues: Venue[] = [
       image: "brands/brands-6.png",
       link: "/shishka-restaurant-6",
    },
+   {
+      name: "SHISHKA EDITION ",
+      address: "Майлина 16/6",
+      image: "brands/brands-7.png",
+      link: "/shishka-restaurant-7",
+   },
 ];
 
 const VenuesBlock: React.FC = () => {
@@ -80,7 +86,6 @@ const VenuesBlock: React.FC = () => {
                   key={index}
                   style={{
                      cursor: "pointer",
-                     border: "1px solid #fff",
                      marginInline: "auto",
                      textDecoration: "none", // Убираем подчёркивание текста
                   }}

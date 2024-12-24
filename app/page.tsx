@@ -11,7 +11,7 @@ export default function Home() {
       <div className="wrapper">
          <Header />
          <main>
-            <Hero />
+            <Hero imageSrc="/hero/hero-bg.jpg" />
             <RecentEvents />
             <OurBrands />
             <Anonces />

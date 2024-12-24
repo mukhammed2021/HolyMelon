@@ -17,7 +17,7 @@ export default function page() {
       <div className="wrapper">
          <Header />
          <main>
-            <Hero />
+        <Hero imageSrc="/hero/hero-bg.jpg" />
             <section>
                <div className="container">
                   <Breadcrumb className="mb-10 sm:mb-[3.5625rem]">

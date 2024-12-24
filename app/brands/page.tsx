@@ -8,7 +8,7 @@ export default function BrandsPage() {
       <div className="wrapper">
          <Header />
          <main>
-            <Hero />
+            <Hero imageSrc="/hero/hero-bg.jpg" />
             <Brands />
          </main>
          <Footer />
