@@ -1,17 +1,17 @@
 "use client";
-
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
+import { useTheme } from "./theme-provider"; // Убедитесь, что путь правильный
 
 const AHOrestaurant: React.FC = () => {
    const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+   const { theme } = useTheme(); // Получаем текущую тему
 
    const features = [
       {
@@ -66,12 +66,11 @@ const AHOrestaurant: React.FC = () => {
 
    return (
       <>
-         <div className="aho-block">
+         <div className="aho-block bg-white dark:bg-black text-black dark:text-white">
             <div className="breadcrumbs">
                <span>ГЛАВНАЯ СТРАНИЦА</span> / <span>БРЕНДЫ</span> /{" "}
                <span>АНО</span>
             </div>
-
             <div className="aho-section">
                <div className="aho-top-section">
                   <div className="restaurant-info">
@@ -79,13 +78,11 @@ const AHOrestaurant: React.FC = () => {
                      <div className="category-stars">
                         <img src="/AHO-restaurant/5-stars.png" alt="5 stars" />
                      </div>
-
                      {/* Заголовок */}
                      <h1 className="restaurant-title">РЕСТОРАН АНО</h1>
                      <p className="restaurant-subtitle">
                         ВАШ ОСТРОВ ВДОХНОВЕНИЯ И ВКУСА В ЦЕНТРЕ ГОРОДА
                      </p>
-
                      {/* Описание */}
                      <p className="restaurant-description">
                         Добро пожаловать в АНО, место, где культурные мотивы,
@@ -93,21 +90,23 @@ const AHOrestaurant: React.FC = () => {
                         сливаются воедино, создавая уникальную атмосферу отдыха
                         и наслаждения.
                      </p>
-
                      {/* Адрес */}
                      <div className="restaurant-links">
                         <div className="restaurant-address">
                            <img
-                              src="/AHO-restaurant/location.png"
+                              src={theme !== "dark" ? "/AHO-restaurant/location.png" : "/brands/location-logo-white.png"}
                               alt="Location"
                            />
-                           <span> <a href="https://2gis.kz/astana/geo/70030076493117994">УЛИЦА АКМЕШИТ 1А, АСТАНА, КАЗАХСТАН</a></span>
+                           <span>
+                              <a href="https://2gis.kz/astana/geo/70030076493117994">
+                                 УЛИЦА АКМЕШИТ 1А, АСТАНА, КАЗАХСТАН
+                              </a>
+                           </span>
                         </div>
-
                         {/* 2GIS */}
                         <div className="restaurant-link">
                            <img
-                              src="/AHO-restaurant/2gis-location.png"
+                              src={theme !== "dark" ? "/AHO-restaurant/2gis-location.png" : "/AHO-restaurant/2gis-location-white.png"}
                               alt="2GIS"
                            />
                            <div>
@@ -121,11 +120,10 @@ const AHOrestaurant: React.FC = () => {
                               </a>
                            </div>
                         </div>
-
                         {/* Контакты */}
                         <div className="restaurant-contacts">
                            <img
-                              src="/AHO-restaurant/contacts.png"
+                              src={theme !== "dark" ? "/AHO-restaurant/contacts.png" : "/AHO-restaurant/contacts-white.png"}
                               alt="Contacts"
                            />
                            <div>
@@ -135,16 +133,14 @@ const AHOrestaurant: React.FC = () => {
                                  Whatsapp</a>
                            </div>
                         </div>
-
                         {/* Часы работы */}
                         <div className="restaurant-hours">
                            <img
-                              src="/AHO-restaurant/work-time.png"
+                              src={theme !== "dark" ? "/AHO-restaurant/work-time.png" : "/AHO-restaurant/work-time-white.png"}
                               alt="Working hours"
                            />
                            <div>
                               <p>ЧАСЫ РАБОТЫ</p>
-
                               <div className="work-time">
                                  <p>
                                     <span>Понедельник - Пятница</span>
@@ -154,24 +150,19 @@ const AHOrestaurant: React.FC = () => {
                                     <span>Суббота - Воскресенье</span>
                                     <span>12:00-04:00</span>
                                  </p>
-
                               </div>
-
                            </div>
                         </div>
                      </div>
-
                   </div>
                </div>
                <div className="swiper-block">
                   <Swiper
-                     style={
-                        {
-                           "--swiper-navigation-color": "#fff",
-                           "--swiper-pagination-color": "#fff",
-                           maxWidth: "777px",
-                        } as React.CSSProperties
-                     }
+                     style={{
+                        "--swiper-navigation-color": "#fff",
+                        "--swiper-pagination-color": "#fff",
+                        maxWidth: "777px",
+                     } as React.CSSProperties}
                      spaceBetween={5}
                      navigation={true}
                      thumbs={{ swiper: thumbsSwiper }}
@@ -236,10 +227,9 @@ const AHOrestaurant: React.FC = () => {
                   Эта ночь развернется в двух главах – время поиска и время открытия. Каждый момент будет отражать ритм звезд в их космическом танце, а каждый гость почувствует себя частью бескрайнего космоса, который зовет открыть и познать себя.
                </p>
             </div>
-
             <div className="container">
                {/* Основные блоки */}
-               <section className="features" >
+               <section className="features">
                   {features.map((feature, index) => (
                      <div
                         key={index}
@@ -253,14 +243,13 @@ const AHOrestaurant: React.FC = () => {
                         }}
                      >
                         <div style={{ fontSize: "30px" }}></div>
-                        <div style={{}}>
+                        <div>
                            <h3>{feature.title}</h3>
                            <p>{feature.description}</p>
                         </div>
                      </div>
                   ))}
                </section>
-
                <div className="aho-bottom-section">
                   <section className="special-offers">
                      <h2>СПЕЦИАЛЬНЫЕ ПРЕДЛОЖЕНИЯ В АНО!</h2>
@@ -271,7 +260,6 @@ const AHOrestaurant: React.FC = () => {
                         </div>
                      ))}
                   </section>
-
                   {/* Галерея */}
                   <section className="gallery">
                      <div className="gallery-item large">
@@ -294,7 +282,6 @@ const AHOrestaurant: React.FC = () => {
                      </div>
                   </section>
                </div>
-
                {/* Специальные предложения */}
             </div>
          </div>

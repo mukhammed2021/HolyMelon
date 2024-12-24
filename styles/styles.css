@@ -30,6 +30,8 @@
    font-family: "Arial", sans-serif;
    line-height: 1.6;
    color: #333;
+   color: inherit; /* This will inherit the text color from the parent */
+
 }
 
 .breadcrumbs {
@@ -212,7 +214,9 @@ img {
    width: 60px;
    height: 60px;
    top: 93% !important;
-   z-index: 10; /* Кнопки будут сверху */
+   z-index: 10; /* Кнопки будут сверху */   
+   background-color: #fff;
+
 }
 
 .swiper-button-prev {
@@ -486,4 +490,28 @@ img {
       height: 100%;
       max-height: 160px;
    }
+}
+
+
+.restaurant-title,
+.restaurant-subtitle,
+.restaurant-description,
+.restaurant-address,
+.restaurant-link p,
+.restaurant-contacts p,
+.restaurant-hours p,
+.special-offers h2,
+.feature-item h3,
+.offer-item h3,
+.feature-item p,
+.offer-item p {
+   color: inherit; /* Inherit color from parent */
+}
+
+.aho-block {
+   color: #000; /* Default text color */
+}
+
+.dark .aho-block {
+   color: #fff; /* Text color for dark mode */
 }

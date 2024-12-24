@@ -1,7 +1,7 @@
 "use client";
-
 import React from "react";
 import Link from "next/link";
+import { useTheme } from "./theme-provider"; // Убедитесь, что путь правильный
 
 type Venue = {
    name: string;
@@ -48,12 +48,26 @@ const venues: Venue[] = [
       link: "/shishka-restaurant-6",
    },
    {
-      name: "SHISHKA EDITION ",
+      name: "SHISHKA EDITION",
       address: "Майлина 16/6",
       image: "brands/brands-7.png",
       link: "/shishka-restaurant-7",
    },
 ];
+
+const Logo: React.FC = () => {
+   const { theme } = useTheme();
+
+   return (
+      <img
+         src={theme !== "dark" ? "/brands/location-logo.png" : "/brands/location-logo-white.png"}
+         width={16}
+         height={16}
+         alt="location"
+         style={{ width: "16px", height: "16px" }}
+      />
+   );
+};
 
 const VenuesBlock: React.FC = () => {
    return (
@@ -70,6 +84,7 @@ const VenuesBlock: React.FC = () => {
                fontWeight: "bold",
                marginBottom: "24px",
             }}
+            className="text-black dark:text-white"
          >
             ЗАВЕДЕНИЯ
          </h2>
@@ -82,12 +97,12 @@ const VenuesBlock: React.FC = () => {
          >
             {venues.map((venue, index) => (
                <Link
-                  href={venue.link} // Используем ссылку из объекта
+                  href={venue.link}
                   key={index}
                   style={{
                      cursor: "pointer",
                      marginInline: "auto",
-                     textDecoration: "none", // Убираем подчёркивание текста
+                     textDecoration: "none",
                   }}
                >
                   <div>
@@ -109,8 +124,8 @@ const VenuesBlock: React.FC = () => {
                               fontSize: "20px",
                               fontWeight: "bold",
                               marginBottom: "8px",
-                              color: "#333",
                            }}
+                           className="text-black dark:text-white"
                         >
                            {venue.name}
                         </h3>
@@ -123,12 +138,8 @@ const VenuesBlock: React.FC = () => {
                               color: "#555",
                            }}
                         >
-                           <img
-                              src="/brands/location-logo.png"
-                              alt="location"
-                              style={{ width: "16px", height: "16px" }}
-                           />
-                           <p>{venue.address}</p>
+                           <Logo />
+                           <p className="text-gray-700 dark:text-white">{venue.address}</p>
                         </div>
                      </div>
                   </div>
