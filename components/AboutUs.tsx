@@ -13,17 +13,17 @@ export default function AboutUs() {
    return (
       <section className="pb-11 pt-[2.375rem] sm:pb-[5.625rem] sm:pt-[4.75rem] md:pb-28 lg:pb-32 xl:pb-40 2xl:pb-[11.25rem]">
          <div className="container">
-            <div className="mb-5 border-b border-black font-bold uppercase sm:mb-10 md:mb-16 dark:border-white">
+            <div className="mb-4 border-b border-black font-bold uppercase sm:mb-9 md:mb-12 dark:border-white">
                <div className="mb-1 text-sm leading-[135%] sm:text-xl">
                   о нас
                </div>
-               <h2 className="text-2xl leading-[137.931034%] sm:text-4xl md:text-5xl lg:text-[3.625rem]">
+               <h2 className="text-2xl leading-[137.931034%] sm:text-3xl md:text-4xl lg:text-5xl">
                   наша компания
                </h2>
             </div>
             <div className="flex flex-col-reverse items-center justify-between gap-y-9 max-sm:text-base max-[480px]:text-sm lg:gap-x-10 xl:flex-row xl:gap-x-16 2xl:gap-x-[5.3125rem]">
                <div className="xl:basis-[703px]">
-                  <p className="mb-8 sm:mb-14 md:mb-[4.625rem]">
+                  <p className="mb-8 text-base sm:mb-14 md:mb-[4.625rem]">
                      Cтремление всей жизни запечатлеть необычное в обычном,
                      заморозить мимолетные моменты времени и поделиться красотой
                      мира, какой мы все видим. Вдохновление в каждом уголке в
@@ -43,13 +43,13 @@ export default function AboutUs() {
                            className="size-7 sm:size-10"
                         />
                      )}
-                     <p className="text-2xl sm:text-3xl">Контакты</p>
+                     <p className="text-xl sm:text-2xl">Контакты</p>
                   </div>
                   <address className="not-italic">
-                     <p className="text-[1.375rem]">Почта</p>
+                     <p className="text-xl">Почта</p>
                      <a
                         href="mailto:holymelonmanagementgroup@gmail.com"
-                        className="mb-8 inline-block hover:underline"
+                        className="mb-8 inline-block text-base hover:underline"
                      >
                         holymelonmanagementgroup@gmail.com
                      </a>
@@ -63,11 +63,11 @@ export default function AboutUs() {
                               alt="2GIS"
                            />
                            <div>
-                              <p>Мы в 2GIS</p>
+                              <p className="text-base">Мы в 2GIS</p>
                               <a
                                  href="https://2gis.ru/"
                                  target="_blank"
-                                 className="underline hover:no-underline"
+                                 className="text-base underline hover:no-underline"
                               >
                                  https://2gis.ru/
                               </a>
@@ -82,11 +82,11 @@ export default function AboutUs() {
                               alt="instagram"
                            />
                            <div>
-                              <p>Мы в INSTAGRAM</p>
+                              <p className="text-base">Мы в INSTAGRAM</p>
                               <a
                                  href="https://www.instagram.com/holymelon.mgmt/#"
                                  target="_blank"
-                                 className="underline hover:no-underline"
+                                 className="text-base underline hover:no-underline"
                               >
                                  @holymelon.mgmt
                               </a>

@@ -25,19 +25,19 @@ export default function Footer() {
       <footer className="border-t border-black py-5 text-base sm:text-lg">
          <div className="container flex max-w-[1596px] flex-col items-center justify-between gap-4 lg:flex-row">
             <div className="flex flex-1 flex-col justify-center gap-[10px] text-center sm:flex-row sm:flex-wrap">
-               <Link href="/" className="text-sm hover:underline sm:text-lg">
+               <Link href="/" className="text-sm hover:underline sm:text-base">
                   Условия использования
                </Link>
                <Separator
                   orientation="vertical"
                   className="hidden h-[27px] bg-black sm:block"
                />
-               <Link href="/" className="text-sm hover:underline sm:text-lg">
+               <Link href="/" className="text-sm hover:underline sm:text-base">
                   Политика конфиденциальности
                </Link>
             </div>
             <Social />
-            <p className="flex flex-1 justify-end text-center text-sm sm:text-lg">
+            <p className="flex flex-1 justify-end text-center text-sm sm:text-base">
                &copy; {new Date().getFullYear()} Holy Melon. Все права защищены.
             </p>
          </div>
@@ -53,7 +53,7 @@ function Social() {
                <a
                   href={social.url}
                   target="_blank"
-                  className="inline-flex size-9 items-center justify-center rounded-full bg-[#142535] sm:size-12"
+                  className="inline-flex size-9 items-center justify-center rounded-full bg-[#142535] sm:size-10"
                >
                   <Image
                      src={social.icon}

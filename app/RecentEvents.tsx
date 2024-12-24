@@ -24,7 +24,7 @@ export default async function RecentEvents() {
    return (
       <section className="pb-7 md:pt-10 lg:pt-14">
          <div className="container max-w-[101.75rem]">
-            <h2 className="mb-12 text-2xl font-bold uppercase leading-[137.209302%] min-[480px]:text-3xl md:text-[2.6875rem]">
+            <h2 className="mb-12 text-2xl font-bold uppercase leading-[137.209302%] min-[480px]:text-3xl md:text-4xl">
                недавние события
             </h2>
             <div className="grid auto-rows-[12.5rem] grid-cols-1 gap-5 sm:grid-cols-2 min-[992px]:grid-cols-3 xl:grid-cols-4 xl:grid-rows-[repeat(3,auto)]">

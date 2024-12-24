@@ -43,12 +43,12 @@ export default function OurBrands() {
    return (
       <section className="pb-[2.375rem] pt-6 md:pb-[4.75rem] md:pt-12">
          <div className="container">
-            <h2 className="mb-10 text-2xl font-bold uppercase leading-none sm:mb-12 md:mb-16 md:text-[2.6875rem] lg:mb-24">
+            <h2 className="mb-10 text-2xl font-bold uppercase leading-none sm:mb-12 md:mb-16 md:text-4xl lg:mb-20">
                наши бренды
             </h2>
          </div>
          <div className="container max-w-[101.75rem]">
-            <div className="flex h-[780px] flex-col gap-8 overflow-hidden sm:h-[870px] sm:gap-[2.625rem] xl:flex-row">
+            <div className="flex h-[600px] flex-col gap-8 overflow-hidden sm:h-[650px] sm:gap-[2.625rem] xl:flex-row">
                {brands.map((brand, index) => (
                   <div
                      key={brand.id}

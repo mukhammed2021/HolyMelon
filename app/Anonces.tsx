@@ -33,10 +33,10 @@ export default function Anonces() {
    return (
       <section className="pb-[2.375rem] pt-10 sm:pb-[4.75rem] sm:pt-[4.75rem]">
          <div className="container">
-            <h2 className="mb-6 text-2xl font-bold uppercase leading-[137.209302%] min-[480px]:text-3xl sm:mb-8 md:text-[2.6875rem]">
+            <h2 className="mb-6 text-2xl font-bold uppercase leading-[137.209302%] min-[480px]:text-3xl sm:mb-8 md:text-4xl">
                Анонсы
             </h2>
-            <p className="mb-6 text-base sm:text-lg md:text-xl lg:text-2xl">
+            <p className="mb-6 text-sm sm:text-base md:text-lg lg:text-xl">
                Готовимся к захватывающему событию: уже [дата] мы ждем вас на
                [название мероприятия]. Вас ждут [основные элементы:
                мастер-классы, выступления, сюрпризы]!
@@ -45,7 +45,7 @@ export default function Anonces() {
                {listAnonces.map((anonce) => (
                   <li
                      key={anonce.id}
-                     className="flex items-center gap-2 rounded-xl border border-[#1c1c21] px-3 py-2 transition-colors sm:gap-[.875rem] sm:px-5 sm:py-4 dark:border-white"
+                     className="flex items-center gap-2 rounded-xl border border-[#1c1c21] px-3 py-2 transition-colors sm:gap-[.875rem] sm:px-4 sm:py-3 dark:border-white"
                   >
                      <div className="shrink-0">
                         {theme !== "dark" ? (
@@ -75,7 +75,7 @@ export default function Anonces() {
                         )}
                      </div>
                      <div className="uppercase text-[#060606] dark:text-white">
-                        <p className="text-sm sm:text-lg md:text-xl">
+                        <p className="text-sm sm:text- md:text-base">
                            {anonce.title}
                         </p>
                         <p className="text-xs font-light sm:text-sm">

@@ -97,7 +97,7 @@ function InfiniteScroller() {
                   {scrollerTexts.map((text, textIndex) => (
                      <div
                         key={`${index}-${textIndex}`}
-                        className="flex items-center space-x-6 whitespace-nowrap px-6 py-3 sm:space-x-11 sm:px-11 sm:py-5"
+                        className="flex items-center space-x-6 whitespace-nowrap px-6 py-3 sm:space-x-8 sm:px-8 sm:py-4"
                      >
                         <div className="size-7 sm:size-10">
                            <Image src={decor} alt="decor" />
