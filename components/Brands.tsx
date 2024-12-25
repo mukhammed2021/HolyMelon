@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { useTheme } from "./theme-provider";
 
 type Venue = {
    name: string;
@@ -47,7 +48,31 @@ const venues: Venue[] = [
       image: "brands/brands-6.png",
       link: "/shishka-restaurant-6",
    },
+   {
+      name: "SHISHKA EDITION ",
+      address: "Майлина 16/6",
+      image: "brands/brands-7.png",
+      link: "/shishka-restaurant-7",
+   },
 ];
+
+const Logo: React.FC = () => {
+   const { theme } = useTheme();
+
+   return (
+      <img
+         src={
+            theme !== "dark"
+               ? "/brands/location-logo.png"
+               : "/brands/location-logo-white.png"
+         }
+         width={16}
+         height={16}
+         alt="location"
+         style={{ width: "16px", height: "16px" }}
+      />
+   );
+};
 
 const VenuesBlock: React.FC = () => {
    return (
@@ -80,7 +105,6 @@ const VenuesBlock: React.FC = () => {
                   key={index}
                   style={{
                      cursor: "pointer",
-                     border: "1px solid #fff",
                      marginInline: "auto",
                      textDecoration: "none", // Убираем подчёркивание текста
                   }}
@@ -106,6 +130,7 @@ const VenuesBlock: React.FC = () => {
                               marginBottom: "8px",
                               color: "#333",
                            }}
+                           className="dark:!text-white"
                         >
                            {venue.name}
                         </h3>
@@ -118,12 +143,8 @@ const VenuesBlock: React.FC = () => {
                               color: "#555",
                            }}
                         >
-                           <img
-                              src="/brands/location-logo.png"
-                              alt="location"
-                              style={{ width: "16px", height: "16px" }}
-                           />
-                           <p>{venue.address}</p>
+                           <Logo />
+                           <p className="text-gray-700 dark:text-white">{venue.address}</p>
                         </div>
                      </div>
                   </div>

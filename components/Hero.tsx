@@ -4,6 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import decor from "/public/hero/decor.svg";
 
+interface HeroProps {
+   imageSrc?: string;
+}
+
 const scrollerTexts = [
    "Атмосфера",
    "Стиль",
@@ -16,12 +20,12 @@ const scrollerTexts = [
    "комфорт",
 ];
 
-export default function Hero() {
+export default function Hero({ imageSrc = "/hero/hero-bg.jpg" }) {
    return (
       <section className="pb-7 md:pb-10 lg:pb-14">
          <div>
             <Image
-               src="/hero/hero-bg.jpg"
+               src={imageSrc}
                width={1920}
                height={843}
                alt="hero"

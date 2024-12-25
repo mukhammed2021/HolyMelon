@@ -9,7 +9,7 @@ export default function AHOPage() {
       <div className="wrapper">
          <Header />
          <main>
-            <Hero />
+            <Hero imageSrc="/AHO-restaurant/aho-bg.png" />
             <AhoRestaurant />
          </main>
          <Footer />

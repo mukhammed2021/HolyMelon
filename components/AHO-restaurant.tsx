@@ -9,9 +9,11 @@ import "swiper/css/thumbs";
 
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
+import { useTheme } from "./theme-provider";
 
 const AHOrestaurant: React.FC = () => {
    const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+   const { theme } = useTheme();
 
    const features = [
       {
@@ -66,7 +68,7 @@ const AHOrestaurant: React.FC = () => {
 
    return (
       <>
-         <div className="aho-block">
+         <div className="aho-block bg-white text-black dark:bg-black dark:text-white">
             <div className="breadcrumbs">
                <span>ГЛАВНАЯ СТРАНИЦА</span> / <span>БРЕНДЫ</span> /{" "}
                <span>АНО</span>
@@ -95,55 +97,89 @@ const AHOrestaurant: React.FC = () => {
                      </p>
 
                      {/* Адрес */}
-                     <div className="restaurant-address">
-                        <img
-                           src="/AHO-restaurant/location.png"
-                           alt="Location"
-                        />
-                        <span>УЛИЦА АКМЕШИТ 1А, АСТАНА, КАЗАХСТАН</span>
-                     </div>
-
-                     {/* 2GIS */}
-                     <div className="restaurant-link">
-                        <img
-                           src="/AHO-restaurant/2gis-location.png"
-                           alt="2GIS"
-                        />
-                        <div>
-                           <p>МЫ В 2GIS </p>
-                           <a
-                              href="https://2gis.ru/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                           >
-                              https://2gis.ru/
-                           </a>
-                        </div>
-                     </div>
-
-                     {/* Контакты */}
-                     <div className="restaurant-contacts">
-                        <img
-                           src="/AHO-restaurant/contacts.png"
-                           alt="Contacts"
-                        />
-                        <div>
-                           <p>Контакты</p>
-                           <span>+7 777 899 99 99</span>
-                        </div>
-                     </div>
-
-                     {/* Часы работы */}
-                     <div className="restaurant-hours">
-                        <img
-                           src="/AHO-restaurant/work-time.png"
-                           alt="Working hours"
-                        />
-                        <div>
-                           <p>ЧАСЫ РАБОТЫ</p>
+                     <div className="restaurant-links">
+                        <div className="restaurant-address">
+                           <img
+                              src={
+                                 theme !== "dark"
+                                    ? "/AHO-restaurant/location.png"
+                                    : "/brands/location-logo-white.png"
+                              }
+                              alt="Location"
+                           />
                            <span>
-                              Открыто · Закроется в <strong>02:00</strong>
+                              {" "}
+                              <a href="https://2gis.kz/astana/geo/70030076493117994">
+                                 УЛИЦА АКМЕШИТ 1А, АСТАНА, КАЗАХСТАН
+                              </a>
                            </span>
+                        </div>
+
+                        {/* 2GIS */}
+                        <div className="restaurant-link">
+                           <img
+                              src={
+                                 theme !== "dark"
+                                    ? "/AHO-restaurant/2gis-location.png"
+                                    : "/AHO-restaurant/2gis-location-white.png"
+                              }
+                              alt="2GIS"
+                           />
+                           <div>
+                              <p>МЫ В 2GIS </p>
+                              <a
+                                 href="https://2gis.kz/astana/firm/70000001089234583?m=71.424314%2C51.121191%2F16"
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                              >
+                                 https://2gis.kz/astana/firm/70000001089234583?m=71.424314%2C51.121191%2F16
+                              </a>
+                           </div>
+                        </div>
+
+                        {/* Контакты */}
+                        <div className="restaurant-contacts">
+                           <img
+                              src={
+                                 theme !== "dark"
+                                    ? "/AHO-restaurant/contacts.png"
+                                    : "/AHO-restaurant/contacts-white.png"
+                              }
+                              alt="Contacts"
+                           />
+                           <div>
+                              <p>Контакты</p>
+                              <span>+7 777 899 99 99</span>
+                              <a href="https://wa.me/77080809999?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%B8%D1%88%D1%83%20%D0%B8%D0%B7%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%202%D0%93%D0%98%D0%A1">
+                                 Whatsapp
+                              </a>
+                           </div>
+                        </div>
+
+                        {/* Часы работы */}
+                        <div className="restaurant-hours">
+                           <img
+                              src={
+                                 theme !== "dark"
+                                    ? "/AHO-restaurant/work-time.png"
+                                    : "/AHO-restaurant/work-time-white.png"
+                              }
+                              alt="Working hours"
+                           />
+                           <div>
+                              <p>ЧАСЫ РАБОТЫ</p>
+
+                              <div className="work-time">
+                                 <p>
+                                    <span>Понедельник - Пятница</span>
+                                    <span>12:00-03:00</span>
+                                 </p>
+                                 <p>
+                                    <span>Суббота - Воскресенье</span>
+                                    <span>12:00-04:00</span>
+                                 </p>
+                              </div>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -206,6 +242,34 @@ const AHOrestaurant: React.FC = () => {
                   </Swiper>
                </div>
             </div>
+            <div className="brand-history">
+               <h1>BRAND HISTORY</h1>
+               <p>
+                  Путники, отыскавшие оазис жизни – АНО, поведали нам, что в
+                  пустыне, когда ночь окутывает мир своим темным покрывалом,
+                  звезды начинают свой величественный танец, рассеяв свет по
+                  бескрайним пескам.
+               </p>
+               <p>
+                  Лишь те, кто смотрит на них с открытым сердцем, способны
+                  увидеть магическую связь звезд с человеческой душой. Эти
+                  небесные проводники помогают раскрыть наше истинное «я»,
+                  превращая ночь в пустыне во вселенную бесконечных
+                  возможностей, которая открывается тем, кто осмелится войти в
+                  нее.
+               </p>
+               <p>
+                  Noor Al Sahara by АНО приглашает вас следовать за этими
+                  путеводными звездами и открыть свет, который скрыт в каждом из
+                  вас.
+               </p>
+               <p>
+                  Эта ночь развернется в двух главах – время поиска и время
+                  открытия. Каждый момент будет отражать ритм звезд в их
+                  космическом танце, а каждый гость почувствует себя частью
+                  бескрайнего космоса, который зовет открыть и познать себя.
+               </p>
+            </div>
 
             <div className="container">
                {/* Основные блоки */}
@@ -217,10 +281,12 @@ const AHOrestaurant: React.FC = () => {
                         style={{
                            display: "flex",
                            alignItems: "center",
+                           justifyContent: "center",
                            gap: "14px",
+                           textAlign: "center",
                         }}
                      >
-                        <div style={{ fontSize: "30px" }}>✶</div>
+                        <div style={{ fontSize: "30px" }}></div>
                         <div>
                            <h3>{feature.title}</h3>
                            <p>{feature.description}</p>
