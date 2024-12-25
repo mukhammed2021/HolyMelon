@@ -20,7 +20,7 @@ const scrollerTexts = [
    "комфорт",
 ];
 
-export default function Hero({ imageSrc = "/hero/hero-bg.jpg" }) {
+export default function Hero({ imageSrc = "/hero/hero-bg.jpg" }: HeroProps) {
    return (
       <section className="pb-7 md:pb-10 lg:pb-14">
          <div>
