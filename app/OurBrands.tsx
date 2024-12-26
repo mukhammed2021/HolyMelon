@@ -13,6 +13,7 @@ const brands = [
       alt: "мята",
       title: "Мята Highvill",
       address: "Байтурсынова 1А",
+      href: "myata",
    },
    {
       id: crypto.randomUUID(),
@@ -20,6 +21,7 @@ const brands = [
       alt: "bla bla bar",
       title: "BLA BLA BAR",
       address: "Сарайшык 4",
+      href: "blablabar",
    },
    {
       id: crypto.randomUUID(),
@@ -27,6 +29,7 @@ const brands = [
       alt: "Ресторан AHÓ",
       title: "Ресторан AHÓ",
       address: "Акмешит 1А",
+      href: "AHO-restaurant",
    },
    {
       id: crypto.randomUUID(),
@@ -34,6 +37,7 @@ const brands = [
       alt: "BEREZKA",
       title: "BEREZKA",
       address: "Сарайшык 4",
+      href: "berezka",
    },
 ];
 
@@ -85,7 +89,7 @@ export default function OurBrands() {
                            </div>
                         </div>
                         <Link
-                           href="/"
+                           href={brand.href}
                            className={cn(
                               "inline-flex size-14 -rotate-45 items-center justify-center rounded-full bg-[#142535] transition-[right,transform] duration-500 hover:-rotate-[135deg] xl:absolute xl:bottom-0 xl:right-1/2 xl:translate-x-1/2",
                               expandedIndex === index
