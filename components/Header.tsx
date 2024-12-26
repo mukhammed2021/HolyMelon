@@ -183,7 +183,7 @@ function NavMenu({ isMenuOpen }: NavMenuProps) {
                <Link href="/reports">Фото и видео</Link>
             </li>
             <li>
-               <Link href="/anonces">анонсы</Link>
+               <a href="#anonces">анонсы</a>
             </li>
             <li className="block xl:hidden">
                <DropdownMenu>

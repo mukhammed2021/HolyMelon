@@ -31,7 +31,10 @@ export default function Anonces() {
    const { theme } = useTheme();
 
    return (
-      <section className="pb-[2.375rem] pt-10 sm:pb-[4.75rem] sm:pt-[4.75rem]">
+      <section
+         id="anonces"
+         className="scroll-mt-4 pb-[2.375rem] pt-10 sm:pb-[4.75rem] sm:pt-[4.75rem]"
+      >
          <div className="container">
             <h2 className="mb-6 text-2xl font-bold uppercase leading-[137.209302%] min-[480px]:text-3xl sm:mb-8 md:text-4xl">
                Анонсы
@@ -75,7 +78,7 @@ export default function Anonces() {
                         )}
                      </div>
                      <div className="uppercase text-[#060606] dark:text-white">
-                        <p className="text-sm sm:text- md:text-base">
+                        <p className="sm:text- text-sm md:text-base">
                            {anonce.title}
                         </p>
                         <p className="text-xs font-light sm:text-sm">
