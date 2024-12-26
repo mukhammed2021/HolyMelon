@@ -1,9 +1,39 @@
-.hero-img img {
-   filter: brightness(1); /* Полная яркость */
+.hero-img {
+   position: relative;
 }
 
+.hero-img img {
+   filter: brightness(61%); /* 100% - 39% = 61% */
+   text-align: center;
+   line-height: 55px;
+ }
+
+.hero-title {
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   gap: 54px;
+   position: absolute;
+   top: 41.5%;
+   left: 16%;
+   color: #fff !important;
+}
+
+.hero-title h1 {
+   font-family: Aeroport;
+   font-size: calc(32px + (110 - 32) * ((100vw - 375px) / (1920 - 375)));
+   font-weight: 700;
+
+}
+
+.hero-title p {
+   font-family: Aeroport;
+   font-size: calc(14px + (54 - 14) * ((100vw - 375px) / (1920 - 375)));
+   font-weight: 400;
+} 
+
 .aho-block {
-   margin-top: 63px;
+   margin-top: 5%;
    margin-inline: auto;
    padding-inline: 1.15%;
 
@@ -233,6 +263,11 @@ img {
 }
 
 @media (max-width: 1400px) {
+   .hero-title {
+      gap: 34px;
+      left: 11%;
+   }
+
    .aho-section {
       flex-direction: column-reverse; /* Элементы сверху вниз, но перевернуто */
       align-items: center; /* Центровка по горизонтали */
@@ -302,6 +337,12 @@ img {
 }
 
 @media (max-width: 768px) {
+   .hero-title {
+      gap: 12px;
+      top: 32%;
+      left: 13%;
+   }
+
    .mySwiper > .swiper-wrapper > .swiper-slide,
    .mySwiper > .swiper-wrapper > .swiper-slide > img {
       max-width: 93px !important;
@@ -363,11 +404,11 @@ img {
 
 /* Базовые стили */
 
-.container {
+/* .container {
    width: 90%;
    margin: 0 auto;
    padding: 20px 0;
-}
+} */
 
 /* Стили для блоков */
 .features,
@@ -479,6 +520,19 @@ img {
       height: 100%;
       max-height: 160px;
    }
+
+   .hero-title {
+      gap: 6px;
+      top: 25%;
+      left: 9%;
+  }
+}
+
+@media (max-width: 416px) {
+   .hero-title {
+      gap: 2px;
+      left: 6%;
+  }
 }
 
 .restaurant-title,
@@ -497,6 +551,7 @@ img {
 }
 
 .aho-block {
+   position: relative;
    color: #000; /* Default text color */
 }
 
