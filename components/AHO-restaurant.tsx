@@ -67,6 +67,11 @@ const AHOrestaurant: React.FC = () => {
    return (
       <>
          <div className="aho-block bg-white dark:bg-black text-black dark:text-white">
+
+            {/* Restaurant Name */}
+
+
+
             <div className="breadcrumbs">
                <span>ГЛАВНАЯ СТРАНИЦА</span> / <span>БРЕНДЫ</span> /{" "}
                <span>АНО</span>
