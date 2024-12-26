@@ -3,9 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import decor from "/public/hero/decor.svg";
+import { cn } from "@/lib/utils";
 
 interface HeroProps {
    imageSrc?: string;
+   className?: string;
 }
 
 const scrollerTexts = [
@@ -20,7 +22,10 @@ const scrollerTexts = [
    "комфорт",
 ];
 
-export default function Hero({ imageSrc = "/hero/hero-bg.jpg" }: HeroProps) {
+export default function Hero({
+   imageSrc = "/hero/hero-bg.jpg",
+   className = "brightness-[.30]",
+}: HeroProps) {
    return (
       <section className="pb-7 md:pb-10 lg:pb-14">
          <div>
@@ -29,7 +34,7 @@ export default function Hero({ imageSrc = "/hero/hero-bg.jpg" }: HeroProps) {
                width={1920}
                height={843}
                alt="hero"
-               className="w-full object-cover brightness-[.30]"
+               className={cn("w-full object-cover", className)}
             />
          </div>
          <InfiniteScroller />

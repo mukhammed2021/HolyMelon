@@ -80,7 +80,7 @@ export default function Staff() {
                   <AccordionContent>
                      <div className="grid auto-cols-[9.8125rem] grid-cols-1 gap-6 md:grid-cols-2 min-[1440px]:grid-cols-3">
                         {members.map((member) => (
-                           <div className="flex gap-5 lg:gap-10">
+                           <div key={member.id} className="flex gap-5 lg:gap-10">
                               <div>
                                  <Image
                                     src={member.src}
@@ -106,7 +106,7 @@ export default function Staff() {
                   <AccordionContent>
                      <div className="grid auto-cols-[9.8125rem] grid-cols-1 gap-6 md:grid-cols-2 min-[1440px]:grid-cols-3">
                         {members.map((member) => (
-                           <div className="flex gap-5 lg:gap-10">
+                           <div key={member.id} className="flex gap-5 lg:gap-10">
                               <div>
                                  <Image
                                     src={member.src}
@@ -132,7 +132,7 @@ export default function Staff() {
                   <AccordionContent>
                      <div className="grid auto-cols-[9.8125rem] grid-cols-1 gap-6 md:grid-cols-2 min-[1440px]:grid-cols-3">
                         {members.map((member) => (
-                           <div className="flex gap-5 lg:gap-10">
+                           <div key={member.id} className="flex gap-5 lg:gap-10">
                               <div>
                                  <Image
                                     src={member.src}
@@ -158,7 +158,7 @@ export default function Staff() {
                   <AccordionContent>
                      <div className="grid auto-cols-[9.8125rem] grid-cols-1 gap-6 md:grid-cols-2 min-[1440px]:grid-cols-3">
                         {members.map((member) => (
-                           <div className="flex gap-5 lg:gap-10">
+                           <div key={member.id} className="flex gap-5 lg:gap-10">
                               <div>
                                  <Image
                                     src={member.src}
@@ -184,7 +184,7 @@ export default function Staff() {
                   <AccordionContent>
                      <div className="grid auto-cols-[9.8125rem] grid-cols-1 gap-6 md:grid-cols-2 min-[1440px]:grid-cols-3">
                         {members.map((member) => (
-                           <div className="flex gap-5 lg:gap-10">
+                           <div key={member.id} className="flex gap-5 lg:gap-10">
                               <div>
                                  <Image
                                     src={member.src}
@@ -210,7 +210,7 @@ export default function Staff() {
                   <AccordionContent>
                      <div className="grid auto-cols-[9.8125rem] grid-cols-1 gap-6 md:grid-cols-2 min-[1440px]:grid-cols-3">
                         {members.map((member) => (
-                           <div className="flex gap-5 lg:gap-10">
+                           <div key={member.id} className="flex gap-5 lg:gap-10">
                               <div>
                                  <Image
                                     src={member.src}
@@ -236,7 +236,7 @@ export default function Staff() {
                   <AccordionContent>
                      <div className="grid auto-cols-[9.8125rem] grid-cols-1 gap-6 md:grid-cols-2 min-[1440px]:grid-cols-3">
                         {members.map((member) => (
-                           <div className="flex gap-5 lg:gap-10">
+                           <div key={member.id} className="flex gap-5 lg:gap-10">
                               <div>
                                  <Image
                                     src={member.src}

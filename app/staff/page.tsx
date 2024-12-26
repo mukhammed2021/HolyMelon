@@ -8,7 +8,7 @@ export default function page() {
       <div className="wrapper">
          <Header />
          <main>
-            <Hero />
+            <Hero imageSrc="/staff/hero-bg.jpg" className="" />
             <Staff />
          </main>
          <Footer />
