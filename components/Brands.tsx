@@ -13,19 +13,19 @@ type Venue = {
 const venues: Venue[] = [
    {
       name: "BEREZKA",
-      address: "Улица Жастар, дом 8, кв. 12, Астана, Казахстан",
+      address: "Байтурсынова 1А",
       image: "brands/brands-1.png",
       link: "/berezka-restaurant", // Путь для перехода
    },
    {
       name: "SHISHKA",
-      address: "Улица Жастар, дом 8, кв. 12, Астана, Казахстан",
+      address: "​Улица Бухар жырау, 28",
       image: "brands/brands-2.png",
       link: "/shishka-restaurant",
    },
    {
       name: "BLA BLA BAR",
-      address: "Улица Жастар, дом 8, кв. 12, Астана, Казахстан",
+      address: "​Кабанбай батыр проспект, 5/3",
       image: "brands/brands-3.png",
       link: "/blabla-bar",
    },
@@ -43,7 +43,7 @@ const venues: Venue[] = [
    },
    {
       name: "SHISHKA",
-      address: "Улица Жастар, дом 8, кв. 12, Астана, Казахстан",
+      address: "​Улица Анет баба, 7а",
       image: "brands/brands-6.png",
       link: "/shishka-restaurant-6",
    },
