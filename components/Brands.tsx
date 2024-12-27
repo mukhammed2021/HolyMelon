@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTheme } from "./theme-provider"; // Убедитесь, что путь правильный
 
@@ -19,13 +19,13 @@ const venues: Venue[] = [
    },
    {
       name: "SHISHKA",
-      address: "​Улица Бухар жырау, 28",
+      address: "​Улица Бухар жырау, 28",
       image: "brands/brands-2.png",
       link: "/shishka-restaurant",
    },
    {
       name: "BLA BLA BAR",
-      address: "​Кабанбай батыр проспект, 5/3",
+      address: "​Кабанбай батыр проспект, 5/3",
       image: "brands/brands-3.png",
       link: "/blabla-bar",
    },
@@ -43,7 +43,7 @@ const venues: Venue[] = [
    },
    {
       name: "SHISHKA",
-      address: "​Улица Анет баба, 7а",
+      address: "​Улица Анет баба, 7а",
       image: "brands/brands-6.png",
       link: "/shishka-restaurant-6",
    },
@@ -57,7 +57,6 @@ const venues: Venue[] = [
 
 const Logo: React.FC = () => {
    const { theme } = useTheme();
-
    return (
       <img
          src={theme !== "dark" ? "/brands/location-logo.png" : "/brands/location-logo-white.png"}
@@ -70,6 +69,22 @@ const Logo: React.FC = () => {
 };
 
 const VenuesBlock: React.FC = () => {
+   const { theme } = useTheme();
+   const [isMobile, setIsMobile] = useState<boolean>(false);
+
+   useEffect(() => {
+      const handleResize = () => {
+         setIsMobile(window.innerWidth <= 470);
+      };
+
+      handleResize(); // Установить начальное значение
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+         window.removeEventListener("resize", handleResize);
+      };
+   }, []);
+
    return (
       <section
          style={{
@@ -91,7 +106,7 @@ const VenuesBlock: React.FC = () => {
          <div
             style={{
                display: "grid",
-               gridTemplateColumns: "repeat(auto-fit, minmax(422px , 1fr))",
+               gridTemplateColumns: "repeat(auto-fit, minmax(325px , 1fr))",
                gap: "41px",
             }}
          >
@@ -99,11 +114,8 @@ const VenuesBlock: React.FC = () => {
                <Link
                   href={venue.link}
                   key={index}
-                  style={{
-                     cursor: "pointer",
-                     marginInline: "auto",
-                     textDecoration: "none",
-                  }}
+                  className="group cursor-pointer mx-auto text-decoration-none"
+
                >
                   <div>
                      <img
