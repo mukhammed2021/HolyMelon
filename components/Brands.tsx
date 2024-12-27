@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTheme } from "./theme-provider";
 
@@ -75,6 +75,22 @@ const Logo: React.FC = () => {
 };
 
 const VenuesBlock: React.FC = () => {
+   const { theme } = useTheme();
+   const [isMobile, setIsMobile] = useState<boolean>(false);
+
+   useEffect(() => {
+      const handleResize = () => {
+         setIsMobile(window.innerWidth <= 470);
+      };
+
+      handleResize(); // Установить начальное значение
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+         window.removeEventListener("resize", handleResize);
+      };
+   }, []);
+
    return (
       <section
          style={{
@@ -95,7 +111,7 @@ const VenuesBlock: React.FC = () => {
          <div
             style={{
                display: "grid",
-               gridTemplateColumns: "repeat(auto-fit, minmax(422px , 1fr))",
+               gridTemplateColumns: "repeat(auto-fit, minmax(325px , 1fr))",
                gap: "41px",
             }}
          >
@@ -103,11 +119,7 @@ const VenuesBlock: React.FC = () => {
                <Link
                   href={venue.link} // Используем ссылку из объекта
                   key={index}
-                  style={{
-                     cursor: "pointer",
-                     marginInline: "auto",
-                     textDecoration: "none", // Убираем подчёркивание текста
-                  }}
+                  className="group cursor-pointer mx-auto text-decoration-none"
                >
                   <div>
                      <img
@@ -144,7 +156,9 @@ const VenuesBlock: React.FC = () => {
                            }}
                         >
                            <Logo />
-                           <p className="text-gray-700 dark:text-white">{venue.address}</p>
+                           <p className="text-gray-700 dark:text-white">
+                              {venue.address}
+                           </p>
                         </div>
                      </div>
                   </div>
