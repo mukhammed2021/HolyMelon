@@ -105,10 +105,10 @@ export default function Header() {
                   <DropdownMenuContent className="rounded-[1.375rem] p-0 dark:bg-[#303030]">
                      <DropdownMenuItem className="px-[1.375rem] py-4">
                         <Link
-                           href="/staff"
+                           href="/team"
                            className="text-[1.375rem] font-bold uppercase"
                         >
-                           сотрудники
+                           команда
                         </Link>
                      </DropdownMenuItem>
                   </DropdownMenuContent>
