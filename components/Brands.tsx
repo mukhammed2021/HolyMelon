@@ -75,8 +75,7 @@ const Logo: React.FC = () => {
 };
 
 const VenuesBlock: React.FC = () => {
-   const { theme } = useTheme();
-   const [isMobile, setIsMobile] = useState<boolean>(false);
+   const [, setIsMobile] = useState<boolean>(false);
 
    useEffect(() => {
       const handleResize = () => {
