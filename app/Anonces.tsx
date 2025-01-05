@@ -25,6 +25,13 @@ const listAnonces = [
       icon: "/anonces/decor-light.svg",
       iconDark: "/anonces/decor-dark.svg",
    },
+   {
+      id: crypto.randomUUID(),
+      title: "день рождения!",
+      text: "Именниникам -15% скидка на всё! + фирменное поздравление и комплимент от кухни",
+      icon: "/anonces/decor-light.svg",
+      iconDark: "/anonces/decor-dark.svg",
+   },
 ];
 
 export default function Anonces() {
