@@ -45,7 +45,6 @@ export default function Reports() {
             const shishkaPreview = await getPreview("shishka");
             const shishkaPremiumPreview = await getPreview("shishka premium");
             const blaBlaBarPreview = await getPreview("bla bla bar");
-            const defaultPreview = await getPreview("default");
 
             setPreviews([
                ahoPreview,
@@ -53,7 +52,6 @@ export default function Reports() {
                shishkaPreview,
                shishkaPremiumPreview,
                blaBlaBarPreview,
-               defaultPreview,
             ]);
          } catch (err) {
             throw err;
