@@ -30,6 +30,7 @@ export default function Gallery({ photos }: GalleryProps) {
    return (
       <>
          <LightGallery
+            download
             speed={500}
             plugins={[lgThumbnail, lgZoom]}
             elementClassNames="gallery"
