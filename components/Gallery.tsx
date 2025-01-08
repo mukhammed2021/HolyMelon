@@ -18,6 +18,10 @@ interface GalleryProps {
    }[];
 }
 
+const mobileSettings = {
+   download: true,
+};
+
 export default function Gallery({ photos }: GalleryProps) {
    const [visible, setVisible] = useState(photos.slice(0, 4));
 
@@ -31,6 +35,7 @@ export default function Gallery({ photos }: GalleryProps) {
       <>
          <LightGallery
             download
+            mobileSettings={mobileSettings}
             speed={500}
             plugins={[lgThumbnail, lgZoom]}
             elementClassNames="gallery"
