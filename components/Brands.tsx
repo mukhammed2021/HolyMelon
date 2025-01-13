@@ -12,10 +12,10 @@ type Venue = {
 
 const venues: Venue[] = [
    {
-      name: "BEREZKA",
+      name: "SHISHKA HIGHVILL",
       address: "Байтурсынова 1А",
       image: "brands/brands-1.png",
-      link: "/berezka-restaurant", // Путь для перехода
+      link: "/Shishka-highvill", // Путь для перехода
    },
    {
       name: "SHISHKA",
