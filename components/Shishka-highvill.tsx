@@ -54,35 +54,6 @@ const ShishkaHighvill: React.FC = () => {
       },
    ];
 
-   const specialOffers = [
-      {
-         title: "HOOKAH SPECIAL",
-         description:
-            "Дымная чаша + комплимент от кухни и бара всего за 6000 тенге.",
-      },
-      {
-         title: "SPECIAL OFFER",
-         description: "Скидка 20% на все блюда из меню.",
-      },
-      {
-         title: "CELEBRATE WITH ANO",
-         description:
-            "В день рождения вас ждет скидка 15% и комплимент от кухни.",
-      },
-      {
-         title: "МАЛЬЧИШНИК И ДЕВИЧНИК",
-         description: "Скидка 10% на весь чек + поздравление от команды АНО.",
-      },
-      {
-         title: "WINE DOWN THURSDAY",
-         description: "Каждый четверг наслаждайтесь скидкой 20% на вино.",
-      },
-      {
-         title: "SAVOR THE MOMENT",
-         description: "Каждую среду второй коктейль в подарок.",
-      },
-   ];
-
    return (
       <>
          <div className="aho-block bg-white text-black dark:bg-black dark:text-white">
