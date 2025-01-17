@@ -26,7 +26,7 @@ const aeroport = localFont({
 export const metadata: Metadata = {
    title: "Holy Melon",
    description: "Holy Melon",
-   referrer: "no-referrer",
+   referrer: "no-referrer-when-downgrade",
 };
 
 export default function RootLayout({
